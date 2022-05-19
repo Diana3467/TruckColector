@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatTooltipModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
