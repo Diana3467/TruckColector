@@ -1,1 +1,88 @@
-<p>asignar-conductor-carro works!</p>
+<div class="asignar-conductor-carro">
+  <div class="dashboard d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h2>Asignar Conductor-Carro</h2>
+  </div>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Asignar
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+<!--       <form [formGroup]="searchForm"> -->
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Seleccione conductor</mat-label>
+              <mat-select>
+                <mat-option value="conductor1">Conductor 1</mat-option>
+                <mat-option value="conductor2">Conductor 2 </mat-option>
+                <mat-option value="conductor3">Conductor 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Seleccione vehículo</mat-label>
+              <mat-select>
+                <mat-option value="vehiculo1">Vehículo 1</mat-option>
+                <mat-option value="vehiculo2">Vehículo 2 </mat-option>
+                <mat-option value="vehiculo3">Vehículo 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <br>
+        <button class="btn btn-primary">Asignar</button>
+        <button class="btn btn-danger">Cancelar</button>
+      <!-- </form> -->
+    </mat-expansion-panel>
+  </mat-accordion>
+  <br>
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Codico Column -->
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+      </ng-container>
+
+      <!-- Conductor Column -->
+      <ng-container matColumnDef="conductor">
+        <th mat-header-cell *matHeaderCellDef> Conductor </th>
+        <td mat-cell *matCellDef="let element"> {{element.conductor}} </td>
+      </ng-container>
+
+      <!-- Vehículo Column -->
+      <ng-container matColumnDef="vehiculo">
+        <th mat-header-cell *matHeaderCellDef> Vehículo </th>
+        <td mat-cell *matCellDef="let element"> {{element.vehiculo}} </td>
+      </ng-container>
+
+      <!-- Fecha inicio Column -->
+      <ng-container matColumnDef="fecinit">
+        <th mat-header-cell *matHeaderCellDef> Fecha inicio </th>
+        <td mat-cell *matCellDef="let element"> {{element.fecinit}} </td>
+      </ng-container>
+
+      <!-- Fecha fin Column -->
+      <ng-container matColumnDef="fecfin">
+        <th mat-header-cell *matHeaderCellDef> Fecha fin </th>
+        <td mat-cell *matCellDef="let element"> {{element.fecfin}} </td>
+      </ng-container>
+
+      <!-- Correo Column -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element" class="center">
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+
