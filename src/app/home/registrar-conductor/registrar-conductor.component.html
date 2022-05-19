@@ -13,28 +13,41 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
-              <mat-label>Nombre completo</mat-label>
+              <mat-label>Nombre</mat-label>
+              <input matInput maxlength="100"/>
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Apellido Paterno</mat-label>
+              <input matInput maxlength="100">
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Apellido Materno</mat-label>
               <input matInput maxlength="100">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>DNI</mat-label>
-              <input matInput maxlength="8">
+              <input matInput maxlength="8" (keypress)="validateFormat($event)">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Edad</mat-label>
-              <input matInput maxlength="3" type="number" minlength="0">
+              <input matInput maxlength="2" (keypress)="validateFormat($event)">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Celular</mat-label>
-              <input matInput maxlength="9" type="number" minlength="0">
+              <input matInput maxlength="9" (keypress)="validateFormat($event)">
             </mat-form-field>
           </div>
+          
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Dirección</mat-label>

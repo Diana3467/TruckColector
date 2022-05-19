@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatAccordion } from '@angular/material/expansion';
 import { ErrorStateMatcher } from '@angular/material/core';
 
@@ -24,6 +24,9 @@ const ELEMENT_DATA: DatosTablaRegistrarConductor[] = [
   templateUrl: './registrar-conductor.component.html',
   styleUrls: ['./registrar-conductor.component.css']
 })
+
+
+
 export class RegistrarConductorComponent implements OnInit {
   panelOpenState = false;
   cNombreCond = 'Clear me';
@@ -32,7 +35,11 @@ export class RegistrarConductorComponent implements OnInit {
   displayedColumns: string[] = ['codigo', 'nombre', 'dni', 'edad', 'celular', 'direccion', 'correo', 'acciones'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  
+  
+  constructor() {
+  
+   }
 
   ngOnInit(): void {
   }
@@ -47,6 +54,26 @@ export class RegistrarConductorComponent implements OnInit {
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
+
+
+  validateFormat(event:any) {
+    let key;
+    if (event.type === 'paste') {
+      key = event.clipboardData.getData('text/plain');
+    } else {
+      key = event.keyCode;
+      key = String.fromCharCode(key);
+    }
+    const regex = /[0-9]|\./;
+     if (!regex.test(key)) {
+      event.returnValue = false;
+       if (event.preventDefault) {
+        event.preventDefault();
+       }
+     }
+    }
+
+    
 
 
 }
