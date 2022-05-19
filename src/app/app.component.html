@@ -7,6 +7,15 @@
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav style="width: 285px; padding: 10px;">
+    <div class="sectiondatosuser position-sticky">
+      <div class="datosuser">
+          <img class="img-perfil" src="/src/app/img/user-perfil.jpg">
+          <div class="row">
+              <strong><var>Joaquin</var></strong>
+              <var>Administrador</var>
+          </div>
+      </div>
+  </div>
     <ul>
       <li><a class="btn btn-primary" [routerLink]="[ '/dashboard' ]">Dashboard</a></li>
       <li><a class="btn btn-primary" [routerLink]="[ '/registrar-conductor' ]">Registrar conductor</a></li>

@@ -28,33 +28,35 @@ const ELEMENT_DATA: DatosTablaRegistrarConductor[] = [
 
 
 export class RegistrarConductorComponent implements OnInit {
+  panelFilterOpenState = false;
   panelOpenState = false;
   cNombreCond = 'Clear me';
   searchForm: any;
-  email = new FormControl('', [Validators.required, Validators.email]);
   displayedColumns: string[] = ['codigo', 'nombre', 'dni', 'edad', 'celular', 'direccion', 'correo', 'acciones'];
   dataSource = ELEMENT_DATA;
 
-  
-  
+
+
   constructor() {
-  
+
    }
 
   ngOnInit(): void {
+    this.searchForm = new FormGroup({
+      nombre: new FormControl(null,[Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]),
+      apepaterno: new FormControl(null,[Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]),
+      apematerno: new FormControl(null,[Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]),
+      dni: new FormControl(null,[Validators.required, Validators.minLength(8)]),
+      edad: new FormControl(null,[Validators.required]),
+      celular: new FormControl(null,[Validators.required, Validators.minLength(9)]),
+      direccion: new FormControl(null),
+      correo: new FormControl(null),
+    });
   }
+
   clearForm(form: FormGroup, control: string) {
     form.get(control)?.setValue('');
   }
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
-
 
   validateFormat(event:any) {
     let key;
@@ -73,7 +75,7 @@ export class RegistrarConductorComponent implements OnInit {
      }
     }
 
-    
+
 
 
 }

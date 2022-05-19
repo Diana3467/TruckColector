@@ -23,6 +23,7 @@ export class AsignarConductorCarroComponent implements OnInit {
   displayedColumns: string[] = ['codigo', 'conductor', 'vehiculo', 'fecinit', 'fecfin', 'acciones'];
   dataSource = ELEMENT_DATA;
   disableSelect = new FormControl(false);
+  searchForm: any;
 
   constructor() { }
 

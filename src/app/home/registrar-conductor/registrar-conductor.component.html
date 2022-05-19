@@ -3,66 +3,115 @@
     <h2>Registrar conductor</h2>
   </div>
   <mat-accordion>
-    <mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelFilterOpenState = true" (closed)="panelFilterOpenState = false"
+    [expanded]="panelFilterOpenState">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Registrar
         </mat-panel-title>
       </mat-expansion-panel-header>
-<!--       <form [formGroup]="searchForm"> -->
+      <form [formGroup]="searchForm">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Nombre</mat-label>
-              <input matInput maxlength="100"/>
+              <input matInput maxlength="100" #nombre formControlName="nombre" required/>
+              <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'nombre');" *ngIf="nombre.value">
+                <mat-icon>close</mat-icon>
+              </button>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('nombre').touched && searchForm.get('nombre').errors?.required">
+                El campo Nombre es requerido
+              </mat-hint>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Apellido Paterno</mat-label>
-              <input matInput maxlength="100">
+              <input matInput maxlength="100" #apepaterno formControlName="apepaterno" required>
+              <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'apepaterno');" *ngIf="apepaterno.value">
+                <mat-icon>close</mat-icon>
+              </button>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('apepaterno').touched && searchForm.get('apepaterno').errors?.required">
+                El campo Apellido paterno es requerido
+              </mat-hint>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Apellido Materno</mat-label>
-              <input matInput maxlength="100">
+              <input matInput maxlength="100" #apematerno formControlName="apematerno" required>
+              <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'apematerno');" *ngIf="apematerno.value">
+                <mat-icon>close</mat-icon>
+              </button>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('apematerno').touched && searchForm.get('apematerno').errors?.required">
+                El campo Apellido materno es requerido
+              </mat-hint>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>DNI</mat-label>
-              <input matInput maxlength="8" (keypress)="validateFormat($event)">
+              <input matInput maxlength="8" (keypress)="validateFormat($event)" #dni formControlName="dni">
+              <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'dni');" *ngIf="dni.value">
+                <mat-icon>close</mat-icon>
+              </button>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('dni').touched && searchForm.get('dni').errors?.required">
+                El campo DNI es requerido
+              </mat-hint>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('dni').errors?.['minlength']">
+                El campo DNI debe tener 8 caracteres
+              </mat-hint>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Edad</mat-label>
-              <input matInput maxlength="2" (keypress)="validateFormat($event)">
+              <input matInput maxlength="3" (keypress)="validateFormat($event)" #edad formControlName="edad" autocomplete="off">
+              <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'edad');" *ngIf="edad.value">
+                <mat-icon>close</mat-icon>
+              </button>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('edad').touched && searchForm.get('edad').errors?.required">
+                El campo Edad es requerido
+              </mat-hint>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Celular</mat-label>
-              <input matInput maxlength="9" (keypress)="validateFormat($event)">
+              <input matInput maxlength="9" (keypress)="validateFormat($event)" #celular formControlName="celular">
+              <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'celular');" *ngIf="celular.value">
+                <mat-icon>close</mat-icon>
+              </button>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('celular').touched && searchForm.get('celular').errors?.required">
+                El campo Celular es requerido
+              </mat-hint>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('celular').errors?.['minlength']">
+                El campo Celular debe tener 9 caracteres
+              </mat-hint>
             </mat-form-field>
           </div>
-          
+
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Dirección</mat-label>
-              <input matInput maxlength="50">
+              <input matInput maxlength="50" #direccion formControlName="direccion">
+              <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'direccion');" *ngIf="direccion.value">
+                <mat-icon>close</mat-icon>
+              </button>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Correo</mat-label>
-              <input matInput placeholder="ejemplo@gmail.com">
+              <input matInput placeholder="ejemplo@gmail.com" #correo formControlName="correo">
+              <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'correo');" *ngIf="correo.value">
+                <mat-icon>close</mat-icon>
+              </button>
             </mat-form-field>
           </div>
-        </div>
-        <button class="btn btn-primary">Registrar</button>
-      <!-- </form> -->
+        </div> <br>
+        <button class="btn btn-primary" style="width: 140px;">Registrar</button>
+      </form>
     </mat-expansion-panel>
   </mat-accordion>
   <br>
@@ -124,3 +173,4 @@
     </table>
   </div>
 </div>
+
