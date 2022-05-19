@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatAccordion } from '@angular/material/expansion';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { RegconductorService } from 'src/app/regconductor.service';
 
 export interface DatosTablaRegistrarConductor {
   codigo: number;
@@ -35,9 +36,9 @@ export class RegistrarConductorComponent implements OnInit {
   displayedColumns: string[] = ['codigo', 'nombre', 'dni', 'edad', 'celular', 'direccion', 'correo', 'acciones'];
   dataSource = ELEMENT_DATA;
 
+  public form!: FormGroup;
   
-  
-  constructor() {
+  constructor(private RegConductor:RegconductorService, private formBuilder:FormBuilder) {
   
    }
 
@@ -74,6 +75,22 @@ export class RegistrarConductorComponent implements OnInit {
     }
 
     
+    public enviarData(){
+      this.RegConductor.post(`http://localhost:7570/api/conductor/`, 
+      {
+        "cNombreCond": "Diego Juan",
+        "cApePatCond": "Huallparuca",
+        "cApeMatCond": "Perez",
+        "cDNICond": "70849568",
+        "cEdadCond": "31",
+        "cCelCond": "948657895",
+        "cDireccCond": "",
+        "cCorEleCond": ""
+      }      
+      ).subscribe(respuesta =>{
+        console.log('Comentario enviado!!');
+      } )
 
+    }
 
 }
