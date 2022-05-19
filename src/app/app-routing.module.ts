@@ -8,6 +8,10 @@ import { AsignarConductorCarroComponent } from 'src/app/home/asignar-conductor-c
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'login', pathMatch: 'full'
+  },
+  {
+    path: 'login',
     component: LoginComponent
   },
   {
