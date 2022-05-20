@@ -14,7 +14,7 @@
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Seleccione conductor</mat-label>
-              <mat-select>
+              <mat-select formControlName="selectconductor">
                 <mat-option value="conductor1">Conductor 1</mat-option>
                 <mat-option value="conductor2">Conductor 2 </mat-option>
                 <mat-option value="conductor3">Conductor 3</mat-option>
@@ -24,7 +24,7 @@
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Seleccione vehículo</mat-label>
-              <mat-select>
+              <mat-select formControlName="selectvehiculo">
                 <mat-option value="vehiculo1">Vehículo 1</mat-option>
                 <mat-option value="vehiculo2">Vehículo 2 </mat-option>
                 <mat-option value="vehiculo3">Vehículo 3</mat-option>
@@ -33,7 +33,7 @@
           </div>
         </div>
         <br>
-        <button class="btn btn-primary">Asignar</button>
+        <button class="btn btn-primary" style="width: 140px;">Asignar</button>
         <!-- <button class="btn btn-danger">Cancelar</button> -->
       </form>
     </mat-expansion-panel>

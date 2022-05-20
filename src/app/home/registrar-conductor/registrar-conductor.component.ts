@@ -44,9 +44,9 @@ export class RegistrarConductorComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchForm = new FormGroup({
-      nombre: new FormControl(null,[Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]),
-      apepaterno: new FormControl(null,[Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]),
-      apematerno: new FormControl(null,[Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]),
+      nombre: new FormControl(null,[Validators.required, Validators.pattern(/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/)]),
+      apepaterno: new FormControl(null,[Validators.required, Validators.pattern(/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/)]),
+      apematerno: new FormControl(null,[Validators.required, Validators.pattern(/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/)]),
       dni: new FormControl(null,[Validators.required, Validators.minLength(8)]),
       edad: new FormControl(null,[Validators.required]),
       celular: new FormControl(null,[Validators.required, Validators.minLength(9)]),
@@ -94,6 +94,10 @@ export class RegistrarConductorComponent implements OnInit {
         console.log('Comentario enviado!!');
       } )
 
+    }
+
+    registrarconductor(){
+      console.log("Entro")
     }
 
 }
