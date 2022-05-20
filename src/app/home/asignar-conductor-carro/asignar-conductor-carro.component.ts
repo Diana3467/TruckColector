@@ -28,6 +28,10 @@ export class AsignarConductorCarroComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.searchForm = new FormGroup({
+      selectconductor: new FormControl(null),
+      selectvehiculo: new FormControl(null)
+    });
   }
 
 }
