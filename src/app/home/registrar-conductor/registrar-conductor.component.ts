@@ -79,6 +79,7 @@ export class RegistrarConductorComponent implements OnInit {
 
 
     public enviarData(){
+      console.log('REGISTRO EXITOSO!!');
       this.RegConductor.post(`http://localhost:7570/api/conductor/`,
       {
         "cNombreCond": this.searchForm.value.nombre.toString(),
@@ -91,7 +92,7 @@ export class RegistrarConductorComponent implements OnInit {
         "cCorEleCond": this.searchForm.value.correo.toString()
       }
       ).subscribe(respuesta =>{
-        console.log('Comentario enviado!!');
+        
       } )
 
     }
