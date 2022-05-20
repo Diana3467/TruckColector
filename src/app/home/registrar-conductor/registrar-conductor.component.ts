@@ -36,10 +36,10 @@ export class RegistrarConductorComponent implements OnInit {
   displayedColumns: string[] = ['codigo', 'nombre', 'dni', 'edad', 'celular', 'direccion', 'correo', 'acciones'];
   dataSource = ELEMENT_DATA;
 
-  form: FormGroup;
+  
 
   constructor(private RegConductor:RegconductorService, private formBuilder:FormBuilder) {
-
+    
    }
 
   ngOnInit(): void {
@@ -79,16 +79,25 @@ export class RegistrarConductorComponent implements OnInit {
 
 
     public enviarData(){
+      console.log(this.searchForm.value.nombre.toString());
+      console.log(this.searchForm.value.apepaterno.toString());
+      console.log(this.searchForm.value.apematerno.toString());
+      console.log(this.searchForm.value.dni.toString());
+      console.log(this.searchForm.value.edad.toString());
+      console.log(this.searchForm.value.celular.toString());
+      console.log(this.searchForm.value.direccion.toString());
+      console.log(this.searchForm.value.correo.toString());
+      
       this.RegConductor.post(`http://localhost:7570/api/conductor/`,
       {
-        "cNombreCond": "Diego Juan",
-        "cApePatCond": "Huallparuca",
-        "cApeMatCond": "Perez",
-        "cDNICond": "70849568",
-        "cEdadCond": "31",
-        "cCelCond": "948657895",
-        "cDireccCond": "",
-        "cCorEleCond": ""
+        "cNombreCond": this.searchForm.value.nombre.toString(),
+        "cApePatCond": this.searchForm.value.apepaterno.toString(),
+        "cApeMatCond": this.searchForm.value.apematerno.toString(),
+        "cDNICond": this.searchForm.value.dni.toString(),
+        "cEdadCond": this.searchForm.value.edad.toString(),
+        "cCelCond": this.searchForm.value.celular.toString(),
+        "cDireccCond": this.searchForm.value.direccion.toString(),
+        "cCorEleCond": this.searchForm.value.correo.toString()
       }
       ).subscribe(respuesta =>{
         console.log('Comentario enviado!!');
