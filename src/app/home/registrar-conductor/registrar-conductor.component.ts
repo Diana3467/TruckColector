@@ -79,15 +79,6 @@ export class RegistrarConductorComponent implements OnInit {
 
 
     public enviarData(){
-      console.log(this.searchForm.value.nombre.toString());
-      console.log(this.searchForm.value.apepaterno.toString());
-      console.log(this.searchForm.value.apematerno.toString());
-      console.log(this.searchForm.value.dni.toString());
-      console.log(this.searchForm.value.edad.toString());
-      console.log(this.searchForm.value.celular.toString());
-      console.log(this.searchForm.value.direccion.toString());
-      console.log(this.searchForm.value.correo.toString());
-      
       this.RegConductor.post(`http://localhost:7570/api/conductor/`,
       {
         "cNombreCond": this.searchForm.value.nombre.toString(),
