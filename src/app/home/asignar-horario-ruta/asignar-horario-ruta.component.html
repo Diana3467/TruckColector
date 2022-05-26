@@ -47,7 +47,6 @@
               <mat-select formControlName="selectfrecuencia" #selectfrecuencia>
                 <mat-option value="frec1">Lunes, Miércoles y Viernes</mat-option>
                 <mat-option value="frec2">Martes, Jueves y Sábado</mat-option>
-                <mat-option value="frec3">Jose Suarez</mat-option>
               </mat-select>
               <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'selectfrecuencia');" *ngIf="selectfrecuencia.value">
                 <mat-icon>close</mat-icon>
