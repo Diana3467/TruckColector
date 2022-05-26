@@ -20,7 +20,7 @@ const ELEMENT_DATA: DatosTablaRegistrarConductor[] = [
   styleUrls: ['./asignar-conductor-carro.component.css']
 })
 export class AsignarConductorCarroComponent implements OnInit {
-  displayedColumns: string[] = ['codigo', 'conductor', 'vehiculo', 'fecinit', 'fecfin', 'acciones'];
+  displayedColumns: string[] = ['codigo', 'conductor', 'vehiculo', 'fecinit', 'fecfin','acciones'];
   dataSource = ELEMENT_DATA;
   disableSelect = new FormControl(false);
   searchForm: any;

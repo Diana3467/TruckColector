@@ -1,0 +1,93 @@
+<div class="asignar-ruta-conductor">
+  <div class="dashboard d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h2>Asignar Ruta-Conductor</h2>
+  </div>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Asignar
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <form [formGroup]="searchForm">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Seleccione ruta</mat-label>
+              <mat-select formControlName="selectruta">
+                <mat-option value="ruta1">Ruta 1: Umuto - Incho</mat-option>
+                <mat-option value="ruta2">Ruta 2: Siglo XX</mat-option>
+                <mat-option value="ruta3">Ruta 3: Juan Parra del Riego</mat-option>
+                <mat-option value="ruta4">Ruta 4: La Esperanza</mat-option>
+                <mat-option value="ruta5">Ruta 5: San Pedro</mat-option>
+                <mat-option value="ruta6">Ruta 6: Saños</mat-option>
+                <mat-option value="ruta7">Ruta 7: Centro Mercado</mat-option>
+                <mat-option value="ruta8">Ruta 8: Chacra Vieja</mat-option>
+                <mat-option value="ruta9">Ruta 9: Batanyacu - Polideportivo</mat-option>
+                <mat-option value="ruta10">Ruta 10: La Victoria</mat-option>
+                <mat-option value="ruta11">Ruta 11: Centro - Instituciones</mat-option>
+                <mat-option value="ruta12">Ruta 12: Lamblaspata</mat-option>
+                <mat-option value="ruta13">Ruta 13: Melchor Gonzales</mat-option>
+                <mat-option value="ruta14">Ruta 14: Cantuta - Covica - Mejorada Alta</mat-option>
+                <mat-option value="ruta15">Ruta 15: Millotingo</mat-option>
+                <mat-option value="ruta16">Ruta 16: Pio Pata - La Florida</mat-option>
+                <mat-option value="ruta17">Ruta 17: El Embudo - Agua de las Vírgenes</mat-option>
+                <mat-option value="ruta18">Ruta 18: Los Andes - Las Brisas</mat-option>
+                <mat-option value="ruta19">Ruta 19: Justicia Paz y Vida</mat-option>
+                <mat-option value="ruta20">Ruta 20: Registros y Terminal</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Seleccione conductor</mat-label>
+              <mat-select formControlName="selectconductor">
+                <mat-option value="conductor1">Karina Perez</mat-option>
+                <mat-option value="conductor2">Maria Torres</mat-option>
+                <mat-option value="conductor3">Jose Suarez</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <br>
+        <button class="btn btn-primary" style="width: 140px;">Asignar</button>
+      </form>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <br>
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Codico Column -->
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+      </ng-container>
+
+      <!-- Conductor Column -->
+      <ng-container matColumnDef="ruta">
+        <th mat-header-cell *matHeaderCellDef> Ruta </th>
+        <td mat-cell *matCellDef="let element"> {{element.ruta}} </td>
+      </ng-container>
+
+      <!-- Vehículo Column -->
+      <ng-container matColumnDef="conductor">
+        <th mat-header-cell *matHeaderCellDef> Conductor </th>
+        <td mat-cell *matCellDef="let element"> {{element.conductor}} </td>
+      </ng-container>
+
+      <!-- Correo Column -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element" class="center">
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+
+</div>

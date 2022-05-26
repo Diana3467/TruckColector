@@ -4,6 +4,7 @@ import { LoginComponent } from 'src/app/components/login/login.component';
 import { DashboardComponent } from 'src/app/home/dashboard/dashboard.component';
 import { RegistrarConductorComponent } from 'src/app/home/registrar-conductor/registrar-conductor.component'
 import { AsignarConductorCarroComponent } from 'src/app/home/asignar-conductor-carro/asignar-conductor-carro.component'
+import { AsignarRutaConductorComponent } from './home/asignar-ruta-conductor/asignar-ruta-conductor.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'asignar-conductor-carro',
     component: AsignarConductorCarroComponent
+  },
+  {
+    path: 'asignar-ruta-conductor',
+    component: AsignarRutaConductorComponent
   },
 ];
 
