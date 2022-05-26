@@ -1,6 +1,6 @@
-<div class="asignar-ruta-conductor">
+<div class="asignar-horario-ruta">
   <div class="dashboard d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h2>Asignar Ruta-Conductor</h2>
+    <h2>Asignar Horario-Ruta</h2>
   </div>
   <mat-accordion>
     <mat-expansion-panel>
@@ -40,16 +40,24 @@
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
-              <mat-label>Seleccione conductor</mat-label>
-              <mat-select formControlName="selectconductor">
-                <mat-option value="conductor1">Abel Ruiz Diaz</mat-option>
-                <mat-option value="conductor2">Diego Juan Huallparuca Perez</mat-option>
-                <mat-option value="conductor3">Juan Taype Morales</mat-option>
-                <mat-option value="conductor4">Alberto Simon Huaman Rojas</mat-option>
-                <mat-option value="conductor5">Kevin Luis Camargo Miranda</mat-option>
-                <mat-option value="conductor6">Jorge Laurente Rios</mat-option>
-                <mat-option value="conductor7">Juan Luis Huanca Rios</mat-option>
+              <mat-label>Seleccione la frecuencia</mat-label>
+              <mat-select formControlName="selectfrecuencia">
+                <mat-option value="frec1">Lunes, Miércoles y Viernes</mat-option>
+                <mat-option value="frec2">Martes, Jueves y Sábado</mat-option>
+                <mat-option value="frec3">Jose Suarez</mat-option>
               </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Horario inicio</mat-label>
+              <input matInput type="time" #horinit min="06:00:00" max="22:00:00" formControlName="horinit" required autocomplete="off"/>
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <mat-form-field appearance="outline">
+              <mat-label>Horario fin</mat-label>
+              <input matInput type="time" #horinit min="06:00:00" max="22:00:00" formControlName="horfin" required autocomplete="off"/>
             </mat-form-field>
           </div>
         </div>
@@ -79,6 +87,19 @@
         <th mat-header-cell *matHeaderCellDef> Conductor </th>
         <td mat-cell *matCellDef="let element"> {{element.conductor}} </td>
       </ng-container>
+
+      <!-- Vehículo Column -->
+      <ng-container matColumnDef="horinit">
+        <th mat-header-cell *matHeaderCellDef> Horario inicio </th>
+        <td mat-cell *matCellDef="let element"> {{element.horinit}} </td>
+      </ng-container>
+
+      <!-- Vehículo Column -->
+      <ng-container matColumnDef="horfin">
+        <th mat-header-cell *matHeaderCellDef> Horario fin </th>
+        <td mat-cell *matCellDef="let element"> {{element.horfin}} </td>
+      </ng-container>
+
 
       <!-- Correo Column -->
       <ng-container matColumnDef="acciones">

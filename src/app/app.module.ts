@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrarConductorComponent } from './home/registrar-conductor/registrar-conductor.component';
 import { AsignarConductorCarroComponent } from './home/asignar-conductor-carro/asignar-conductor-carro.component';
 import { AsignarRutaConductorComponent } from './home/asignar-ruta-conductor/asignar-ruta-conductor.component';
+import { AsignarHorarioRutaComponent } from './home/asignar-horario-ruta/asignar-horario-ruta.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
@@ -30,10 +31,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppComponent,
     RegistrarConductorComponent,
     AsignarConductorCarroComponent,
+    AsignarRutaConductorComponent,
+    AsignarHorarioRutaComponent,
     MenuComponent,
     LoginComponent,
     DashboardComponent,
-    AsignarRutaConductorComponent,
   ],
   imports: [
     BrowserModule,
