@@ -14,7 +14,7 @@
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Seleccione ruta</mat-label>
-              <mat-select formControlName="selectruta">
+              <mat-select formControlName="selectruta" #selectruta>
                 <mat-option value="ruta1">Ruta 1: Umuto - Incho</mat-option>
                 <mat-option value="ruta2">Ruta 2: Siglo XX</mat-option>
                 <mat-option value="ruta3">Ruta 3: Juan Parra del Riego</mat-option>
@@ -36,28 +36,43 @@
                 <mat-option value="ruta19">Ruta 19: Justicia Paz y Vida</mat-option>
                 <mat-option value="ruta20">Ruta 20: Registros y Terminal</mat-option>
               </mat-select>
+              <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'selectruta');" *ngIf="selectruta.value">
+                <mat-icon>close</mat-icon>
+              </button>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Seleccione la frecuencia</mat-label>
-              <mat-select formControlName="selectfrecuencia">
+              <mat-select formControlName="selectfrecuencia" #selectfrecuencia>
                 <mat-option value="frec1">Lunes, Miércoles y Viernes</mat-option>
                 <mat-option value="frec2">Martes, Jueves y Sábado</mat-option>
                 <mat-option value="frec3">Jose Suarez</mat-option>
               </mat-select>
+              <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'selectfrecuencia');" *ngIf="selectfrecuencia.value">
+                <mat-icon>close</mat-icon>
+              </button>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Horario inicio</mat-label>
               <input matInput type="time" #horinit min="06:00:00" max="22:00:00" formControlName="horinit" required autocomplete="off"/>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('horinit').touched && searchForm.get('horinit').errors?.required">
+                El campo Hora inicio es requerido
+              </mat-hint>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Horario fin</mat-label>
-              <input matInput type="time" #horinit min="06:00:00" max="22:00:00" formControlName="horfin" required autocomplete="off"/>
+              <input matInput type="time" #horfin min="06:00:00" max="22:00:00" formControlName="horfin" required autocomplete="off"/>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('horfin').touched && searchForm.get('horfin').errors?.required">
+                El campo Hora fin es requerido
+              </mat-hint>
+              <mat-hint style="color:red;" *ngIf="searchForm.get('horfin').errors?.['min']">
+                El horario mínimo es a las 06:00 am
+              </mat-hint>
             </mat-form-field>
           </div>
         </div>

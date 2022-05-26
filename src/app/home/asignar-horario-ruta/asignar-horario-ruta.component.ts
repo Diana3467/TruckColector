@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 export interface DatosTablaRutaConductor {
   codigo: number;
@@ -28,10 +28,13 @@ export class AsignarHorarioRutaComponent implements OnInit {
   ngOnInit(): void {
     this.searchForm = new FormGroup({
       selectruta: new FormControl(null),
-      selectfrecuencia: new FormControl(null)
+      selectfrecuencia: new FormControl(null),
+      horinit: new FormControl(null,[Validators.required]),
+      horfin: new FormControl(null,[Validators.required]),
     });
   }
-
-
+  clearForm(form: FormGroup, control: string) {
+    form.get(control)?.setValue('');
+  }
 
 }
