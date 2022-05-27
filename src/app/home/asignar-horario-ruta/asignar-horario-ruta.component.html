@@ -14,7 +14,7 @@
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Seleccione ruta</mat-label>
-              <mat-select formControlName="selectruta" #selectruta>
+              <mat-select formControlName="selectruta" #selectruta [(ngModel)]="selectedrutaOption">
                 <mat-option value="ruta1">Ruta 1: Umuto - Incho</mat-option>
                 <mat-option value="ruta2">Ruta 2: Siglo XX</mat-option>
                 <mat-option value="ruta3">Ruta 3: Juan Parra del Riego</mat-option>
@@ -44,7 +44,7 @@
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Seleccione la frecuencia</mat-label>
-              <mat-select formControlName="selectfrecuencia" #selectfrecuencia>
+              <mat-select formControlName="selectfrecuencia" #selectfrecuencia [(ngModel)]="selectedfrecuenciaOption">
                 <mat-option value="frec1">Lunes, Miércoles y Viernes</mat-option>
                 <mat-option value="frec2">Martes, Jueves y Sábado</mat-option>
               </mat-select>
@@ -56,7 +56,7 @@
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Horario inicio</mat-label>
-              <input matInput type="time" #horinit min="06:00:00" max="22:00:00" formControlName="horinit" required autocomplete="off"/>
+              <input matInput type="time" #horinit min="06:00:00" max="22:00:00" formControlName="horinit" required autocomplete="off" [(ngModel)]="horainicio"/>
               <mat-hint style="color:red;" *ngIf="searchForm.get('horinit').touched && searchForm.get('horinit').errors?.required">
                 El campo Hora inicio es requerido
               </mat-hint>
@@ -65,7 +65,7 @@
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
               <mat-label>Horario fin</mat-label>
-              <input matInput type="time" #horfin min="06:00:00" max="22:00:00" formControlName="horfin" required autocomplete="off"/>
+              <input matInput type="time" #horfin min="06:00:00" max="22:00:00" formControlName="horfin" required autocomplete="off" [(ngModel)]="horafin"/>
               <mat-hint style="color:red;" *ngIf="searchForm.get('horfin').touched && searchForm.get('horfin').errors?.required">
                 El campo Hora fin es requerido
               </mat-hint>
@@ -76,7 +76,7 @@
           </div>
         </div>
         <br>
-        <button class="btn btn-primary" style="width: 140px;">Asignar</button>
+        <button class="btn btn-primary" style="width: 140px;" (click)="asignar_horario_ruta()">Asignar</button>
       </form>
     </mat-expansion-panel>
   </mat-accordion>
@@ -97,9 +97,9 @@
       </ng-container>
 
       <!-- Vehículo Column -->
-      <ng-container matColumnDef="conductor">
-        <th mat-header-cell *matHeaderCellDef> Conductor </th>
-        <td mat-cell *matCellDef="let element"> {{element.conductor}} </td>
+      <ng-container matColumnDef="frecuencia">
+        <th mat-header-cell *matHeaderCellDef> Frecuencia </th>
+        <td mat-cell *matCellDef="let element"> {{element.frecuencia}} </td>
       </ng-container>
 
       <!-- Vehículo Column -->

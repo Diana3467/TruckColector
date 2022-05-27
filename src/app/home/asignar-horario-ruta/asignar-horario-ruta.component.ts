@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 export interface DatosTablaRutaConductor {
   codigo: number;
   ruta: string;
-  conductor: string;
+  frecuencia: string;
   horinit: string;
   horfin: string;
 }
 const ELEMENT_DATA: DatosTablaRutaConductor[] = [
-  {codigo: 1, ruta:'Ruta 1: Umuto - Incho', conductor: 'Karina Perez', horinit:'', horfin:''},
-  {codigo: 2, ruta:'Ruta 8: Chacra Vieja', conductor: 'Maria Torres', horinit:'', horfin:''},
-  {codigo: 3, ruta:'Ruta 9: Batanyacu - Polideportivo', conductor: 'Jose Suarez', horinit:'', horfin:''},
+  {codigo: 1, ruta:'Ruta 1: Umuto - Incho', frecuencia: 'Lunes, Miércoles y Viernes', horinit:'', horfin:''},
+  {codigo: 2, ruta:'Ruta 8: Chacra Vieja', frecuencia: 'Lunes, Miércoles y Viernes', horinit:'', horfin:''},
+  {codigo: 3, ruta:'Ruta 9: Batanyacu - Polideportivo', frecuencia: 'Martes, Jueves y Sábado', horinit:'', horfin:''},
 ];
 
 @Component({
@@ -21,9 +22,15 @@ const ELEMENT_DATA: DatosTablaRutaConductor[] = [
 })
 export class AsignarHorarioRutaComponent implements OnInit {
   searchForm: any;
-  displayedColumns: string[] = ['codigo', 'ruta', 'conductor', 'horinit', 'horfin','acciones'];
+  displayedColumns: string[] = ['codigo', 'ruta', 'frecuencia', 'horinit', 'horfin','acciones'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  selectedrutaOption: string;
+  selectedfrecuenciaOption: string;
+  horainicio: string;
+  horafin: string;
+  constructor(
+    private toastr: ToastrService,
+  ) { }
 
   ngOnInit(): void {
     this.searchForm = new FormGroup({
@@ -35,6 +42,25 @@ export class AsignarHorarioRutaComponent implements OnInit {
   }
   clearForm(form: FormGroup, control: string) {
     form.get(control)?.setValue('');
+  }
+  asignar_horario_ruta(){
+    var vruta = this.selectedrutaOption;
+    var vfrecuencia = this.selectedfrecuenciaOption;
+    var vhorinit = this.horainicio;
+    var vhorfin = this.horafin;
+    console.log(vruta);
+    console.log(vfrecuencia);
+    console.log(vhorinit);
+    console.log(vhorfin);
+    if(vruta=="ruta2"){
+
+    }else{
+      this.toastr.info(
+        'false'
+      );
+    };
+
+    return
   }
 
 }
