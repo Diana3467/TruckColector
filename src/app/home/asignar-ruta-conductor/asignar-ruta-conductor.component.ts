@@ -26,7 +26,9 @@ export class AsignarRutaConductorComponent implements OnInit {
   ngOnInit(): void {
     this.searchForm = new FormGroup({
       selectruta: new FormControl(null),
-      selectconductor: new FormControl(null)
+      selectconductor: new FormControl(null),
+      fecinit: new FormControl(null),
+      fecfin: new FormControl(null)
     });
   }
 
