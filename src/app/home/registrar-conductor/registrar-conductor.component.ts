@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatAccordion } from '@angular/material/expansion';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { RegconductorService } from 'src/app/regconductor.service';
+import { RegconductorService } from 'src/app/home/registrar-conductor/WebService/regconductor.service';
 
 export interface DatosTablaRegistrarConductor {
   codigo: number;
