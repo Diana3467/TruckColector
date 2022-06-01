@@ -15,26 +15,7 @@
             <mat-form-field appearance="outline">
               <mat-label>Seleccione ruta</mat-label>
               <mat-select formControlName="selectruta">
-                <mat-option value="ruta1">Ruta 1: Umuto - Incho</mat-option>
-                <mat-option value="ruta2">Ruta 2: Siglo XX</mat-option>
-                <mat-option value="ruta3">Ruta 3: Juan Parra del Riego</mat-option>
-                <mat-option value="ruta4">Ruta 4: La Esperanza</mat-option>
-                <mat-option value="ruta5">Ruta 5: San Pedro</mat-option>
-                <mat-option value="ruta6">Ruta 6: Saños</mat-option>
-                <mat-option value="ruta7">Ruta 7: Centro Mercado</mat-option>
-                <mat-option value="ruta8">Ruta 8: Chacra Vieja</mat-option>
-                <mat-option value="ruta9">Ruta 9: Batanyacu - Polideportivo</mat-option>
-                <mat-option value="ruta10">Ruta 10: La Victoria</mat-option>
-                <mat-option value="ruta11">Ruta 11: Centro - Instituciones</mat-option>
-                <mat-option value="ruta12">Ruta 12: Lamblaspata</mat-option>
-                <mat-option value="ruta13">Ruta 13: Melchor Gonzales</mat-option>
-                <mat-option value="ruta14">Ruta 14: Cantuta - Covica - Mejorada Alta</mat-option>
-                <mat-option value="ruta15">Ruta 15: Millotingo</mat-option>
-                <mat-option value="ruta16">Ruta 16: Pio Pata - La Florida</mat-option>
-                <mat-option value="ruta17">Ruta 17: El Embudo - Agua de las Vírgenes</mat-option>
-                <mat-option value="ruta18">Ruta 18: Los Andes - Las Brisas</mat-option>
-                <mat-option value="ruta19">Ruta 19: Justicia Paz y Vida</mat-option>
-                <mat-option value="ruta20">Ruta 20: Registros y Terminal</mat-option>
+                <mat-option *ngFor="let selectruta of itemruta" [value]="selectruta.nCodigoRuta">{{selectruta.cNombreRuta + " -> " + selectruta.cDescripcion}}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -42,13 +23,8 @@
             <mat-form-field appearance="outline">
               <mat-label>Seleccione conductor</mat-label>
               <mat-select formControlName="selectconductor">
-                <mat-option value="conductor1">Abel Ruiz Diaz</mat-option>
-                <mat-option value="conductor2">Diego Juan Huallparuca Perez</mat-option>
-                <mat-option value="conductor3">Juan Taype Morales</mat-option>
-                <mat-option value="conductor4">Alberto Simon Huaman Rojas</mat-option>
-                <mat-option value="conductor5">Kevin Luis Camargo Miranda</mat-option>
-                <mat-option value="conductor6">Jorge Laurente Rios</mat-option>
-                <mat-option value="conductor7">Juan Luis Huanca Rios</mat-option>
+                <mat-option *ngFor="let selectconductor of itemconductor" [value]="selectconductor.nCodigoCond">{{selectconductor.cNombreCond +", "+ selectconductor.cApePatCond +" "+ selectconductor.cApeMatCond}}</mat-option>
+                
               </mat-select>
             </mat-form-field>
           </div>

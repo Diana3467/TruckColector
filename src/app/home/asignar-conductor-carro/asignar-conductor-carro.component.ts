@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Carro } from '../modelos/carro';
+import { Conductor } from '../modelos/conductor';
+import { WservConductorCarroService } from './WebServiceConductorCarro/wserv-conductor-carro.service';
 
 export interface DatosTablaRegistrarConductor {
   codigo: number;
@@ -20,14 +23,30 @@ const ELEMENT_DATA: DatosTablaRegistrarConductor[] = [
   styleUrls: ['./asignar-conductor-carro.component.css']
 })
 export class AsignarConductorCarroComponent implements OnInit {
+
+  itemcarro: Carro[];
+  itemconductor: Conductor[];
+
   displayedColumns: string[] = ['codigo', 'conductor', 'vehiculo', 'fecinit', 'fecfin','acciones'];
   dataSource = ELEMENT_DATA;
   disableSelect = new FormControl(false);
   searchForm: any;
 
-  constructor() { }
+  constructor(
+    private WSConductorCarro: WservConductorCarroService,
+  ) { }
 
   ngOnInit(): void {
+
+    this.WSConductorCarro.getlistaconductores().subscribe(item=>{
+      this.itemconductor = item;
+    });
+
+    this.WSConductorCarro.getlistacarros().subscribe(item=>{
+      this.itemcarro = item;
+    });
+
+
     this.searchForm = new FormGroup({
       selectconductor: new FormControl(null),
       selectvehiculo: new FormControl(null)

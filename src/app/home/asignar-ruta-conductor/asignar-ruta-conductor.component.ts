@@ -1,5 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Conductor } from '../modelos/conductor';
+import { Ruta } from '../modelos/ruta';
+import { WservRutConService } from './WebServiceRutCon/wserv-rut-con.service';
 
 export interface DatosTablaRutaConductor {
   codigo: number;
@@ -18,15 +22,33 @@ const ELEMENT_DATA: DatosTablaRutaConductor[] = [
   styleUrls: ['./asignar-ruta-conductor.component.css']
 })
 export class AsignarRutaConductorComponent implements OnInit {
+
+  itemruta: Ruta[];
+  itemconductor: Conductor[];
+
+
   displayedColumns: string[] = ['codigo', 'ruta', 'conductor', 'acciones'];
   searchForm: any;
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  constructor(
+    private http:HttpClient,
+    private WebServiceRutaConductor: WservRutConService,
+    
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+
+    this.WebServiceRutaConductor.getlistaconductores().subscribe(item=>{
+      this.itemconductor = item;
+    });
+
+    this.WebServiceRutaConductor.getlistarutas().subscribe(item=>{
+      this.itemruta = item;
+    });
+
     this.searchForm = new FormGroup({
       selectruta: new FormControl(null),
-      selectconductor: new FormControl(null)
+     selectconductor: new FormControl(null)
     });
   }
 

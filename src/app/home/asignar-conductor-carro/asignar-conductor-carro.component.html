@@ -15,9 +15,7 @@
             <mat-form-field appearance="outline">
               <mat-label>Seleccione conductor</mat-label>
               <mat-select formControlName="selectconductor">
-                <mat-option value="conductor1">Conductor 1</mat-option>
-                <mat-option value="conductor2">Conductor 2 </mat-option>
-                <mat-option value="conductor3">Conductor 3</mat-option>
+                <mat-option *ngFor="let selectconductor of itemconductor" [value]="selectconductor.nCodigoCond">{{selectconductor.cNombreCond +", "+ selectconductor.cApePatCond +" "+ selectconductor.cApeMatCond}}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -25,9 +23,7 @@
             <mat-form-field appearance="outline">
               <mat-label>Seleccione vehículo</mat-label>
               <mat-select formControlName="selectvehiculo">
-                <mat-option value="vehiculo1">Vehículo 1</mat-option>
-                <mat-option value="vehiculo2">Vehículo 2 </mat-option>
-                <mat-option value="vehiculo3">Vehículo 3</mat-option>
+                <mat-option *ngFor="let selectvehiculo of itemcarro" [value]="selectvehiculo.nCodigoCar">{{selectvehiculo.cPlacaCar +", "+ selectvehiculo.cAnioCar +" "+ selectvehiculo.cMarcaCar}}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
