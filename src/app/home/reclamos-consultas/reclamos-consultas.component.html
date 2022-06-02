@@ -6,9 +6,11 @@
     <mat-tab label="Reclamos">
       <div class="contenido-tab">
         <mat-tab-group animationDuration="0ms">
+
+
           <mat-tab label="Ciudadano">
             <div class="subcontenido-tab">
-              <form [formGroup]="searchForm">
+              <form [formGroup]="searchForm" (submit)="BusquedaReclamoCiudadano()">
                 <div class="row">
                   <!-- <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                     <mat-form-field appearance="fill">
@@ -32,9 +34,9 @@
                     <mat-form-field appearance="outline" class="Select_estados">
                       <mat-label>Seleccione estado</mat-label>
                       <mat-select formControlName="selectestado" #selectestado>
-                        <mat-option value="estado1">Todos</mat-option>
-                        <mat-option value="estado2">Pendiente</mat-option>
-                        <mat-option value="estado3">Completado</mat-option>
+                        <mat-option value="2">Todos</mat-option>
+                        <mat-option value="1">Pendiente</mat-option>
+                        <mat-option value="0">Completado</mat-option>
                       </mat-select>
                       <button mat-button mat-icon-button matSuffix (click)="clearForm(searchForm, 'selectestado');" *ngIf="selectestado.value">
                         <mat-icon>close</mat-icon>
@@ -48,24 +50,26 @@
               </form>
               <br>
               <div>
+
+
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
                   <!-- Fecha Reclamo Column -->
-                  <ng-container matColumnDef="r_fechareclamo">
+                  <ng-container matColumnDef="cFechaRecC">
                     <th mat-header-cell *matHeaderCellDef> Fecha de registro </th>
-                    <td mat-cell *matCellDef="let element"> {{element.r_fechareclamo}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.cFechaRecC}} </td>
                   </ng-container>
 
                   <!-- Ciudadano Column -->
-                  <ng-container matColumnDef="r_ciudadano">
+                  <ng-container matColumnDef="cNombreCompleto">
                     <th mat-header-cell *matHeaderCellDef> Reportado por </th>
-                    <td mat-cell *matCellDef="let element"> {{element.r_ciudadano}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.cNombreCompleto}} </td>
                   </ng-container>
 
                   <!-- Vehículo Column -->
-                  <ng-container matColumnDef="r_reclamo">
+                  <ng-container matColumnDef="cDescripcionRecC">
                     <th mat-header-cell *matHeaderCellDef> Detalle reclamo </th>
-                    <td mat-cell *matCellDef="let element"> {{element.r_reclamo}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.cDescripcionRecC}} </td>
                   </ng-container>
 
                   <!-- Correo Column -->
@@ -82,17 +86,19 @@
               </div>
             </div>
           </mat-tab>
+
+
           <mat-tab label="Conductor">
             <div class="subcontenido-tab">
-              <form [formGroup]="searchFormRConduc">
+              <form [formGroup]="searchFormRConduc" (submit)="BusquedaReclamoConductor()">
                 <div class="row">
                   <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                     <mat-form-field appearance="outline" class="Select_estados_conductor">
                       <mat-label>Seleccione estado</mat-label>
                       <mat-select formControlName="selectestadoC" #selectestadoC>
-                        <mat-option value="estadoC1">Todos</mat-option>
-                        <mat-option value="estadoC2">Pendiente</mat-option>
-                        <mat-option value="estadoC3">Completado</mat-option>
+                        <mat-option value="2">Todos</mat-option>
+                        <mat-option value="1">Pendiente</mat-option>
+                        <mat-option value="0">Completado</mat-option>
                       </mat-select>
                       <button mat-button mat-icon-button matSuffix (click)="clearForm(searchFormRConduc, 'selectestadoC');" *ngIf="selectestadoC.value">
                         <mat-icon>close</mat-icon>
@@ -106,30 +112,33 @@
               </form>
               <br>
               <div>
+
+
+
                 <table mat-table [dataSource]="dataSourceRConductor" class="mat-elevation-z8">
 
                   <!-- Fecha Reclamo Column -->
-                  <ng-container matColumnDef="rc_fechareclamo">
+                  <ng-container matColumnDef="cFechaRecCo">
                     <th mat-header-cell *matHeaderCellDef> Fecha de registro </th>
-                    <td mat-cell *matCellDef="let element"> {{element.rc_fechareclamo}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.cFechaRecCo}} </td>
                   </ng-container>
 
                   <!-- Ciudadano Column -->
-                  <ng-container matColumnDef="rc_conductor">
+                  <ng-container matColumnDef="cNombreCompleto">
                     <th mat-header-cell *matHeaderCellDef> Reportado por </th>
-                    <td mat-cell *matCellDef="let element"> {{element.rc_conductor}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.cNombreCompleto}} </td>
                   </ng-container>
 
                   <!-- Vehículo Column -->
-                  <ng-container matColumnDef="rc_reclamo">
+                  <ng-container matColumnDef="cDescripcionRecCo">
                     <th mat-header-cell *matHeaderCellDef> Detalle reclamo </th>
-                    <td mat-cell *matCellDef="let element"> {{element.rc_reclamo}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.cDescripcionRecCo}} </td>
                   </ng-container>
 
                   <!-- Correo Column -->
                   <ng-container matColumnDef="acciones">
                     <th mat-header-cell *matHeaderCellDef> Acciones </th>
-                    <td mat-cell *matCellDef="let element" class="center">
+                    <td mat-cell *matCellDef="let row" class="center">
 
                     </td>
                   </ng-container>
@@ -143,20 +152,23 @@
         </mat-tab-group>
       </div>
     </mat-tab>
+
+
+
     <mat-tab label="Denuncias Ambientales">
       <div class="contenido-tab">
         <mat-tab-group animationDuration="0ms">
           <mat-tab label="Ciudadano">
             <div class="subcontenido-tab">
-              <form [formGroup]="searchFormDenuncia">
+              <form [formGroup]="searchFormDenuncia" (submit)="BusquedaDenunciaCiudadano()">
                 <div class="row">
                   <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                     <mat-form-field appearance="outline" class="Select_tipoDenuncia">
                       <mat-label>Seleccione tipo de denuncia</mat-label>
                       <mat-select formControlName="selectTipoD" #selectTipoD>
-                        <mat-option value="tipoD1">Todos</mat-option>
-                        <mat-option value="tipoD2">Publico</mat-option>
-                        <mat-option value="tipoD3">Anonimo</mat-option>
+                        <mat-option value="2">Todos</mat-option>
+                        <mat-option value="1">Publico</mat-option>
+                        <mat-option value="0">Anonimo</mat-option>
                       </mat-select>
                       <button mat-button mat-icon-button matSuffix (click)="clearForm(searchFormDenuncia, 'selectTipoD');" *ngIf="selectTipoD.value">
                         <mat-icon>close</mat-icon>
@@ -167,9 +179,9 @@
                     <mat-form-field appearance="outline" class="Select_estadoDenuncia">
                       <mat-label>Seleccione estado de denuncia</mat-label>
                       <mat-select formControlName="selectEstadoD" #selectEstadoD>
-                        <mat-option value="estadoD1">Todos</mat-option>
-                        <mat-option value="estadoD2">Nuevo</mat-option>
-                        <mat-option value="estadoD3">Visto</mat-option>
+                        <mat-option value="2">Todos</mat-option>
+                        <mat-option value="1">Nuevo</mat-option>
+                        <mat-option value="0">Visto</mat-option>
                       </mat-select>
                       <button mat-button mat-icon-button matSuffix (click)="clearForm(searchFormDenuncia, 'selectEstadoD');" *ngIf="selectEstadoD.value">
                         <mat-icon>close</mat-icon>
@@ -182,43 +194,46 @@
                 </div>
               </form>
               <br>
+
+
               <div>
                 <table mat-table [dataSource]="dataSourceDenuncia" class="mat-elevation-z8">
 
                   <!-- Fecha Denuncia Column -->
-                  <ng-container matColumnDef="d_fechadenuncia">
+                  <ng-container matColumnDef="cFechaDenC">
                     <th mat-header-cell *matHeaderCellDef> Fecha de registro</th>
-                    <td mat-cell *matCellDef="let element"> {{element.d_fechadenuncia}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.cFechaDenC}} </td>
                   </ng-container>
 
                   <!-- Tipo Denuncia Column -->
-                  <ng-container matColumnDef="d_tipodenuncia">
+                  <ng-container matColumnDef="cModoDenC">
                     <th mat-header-cell *matHeaderCellDef> Tipo de denuncia</th>
-                    <td mat-cell *matCellDef="let element"> {{element.d_tipodenuncia}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.cModoDenC}} </td>
                   </ng-container>
 
                   <!-- Descripcion Denuncia Column -->
-                  <ng-container matColumnDef="d_descripciondenuncia">
+                  <ng-container matColumnDef="cDescripcionDenC">
                     <th mat-header-cell *matHeaderCellDef> Descripción de la denuncia </th>
-                    <td mat-cell *matCellDef="let element"> {{element.d_descripciondenuncia}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.cDescripcionDenC}} </td>
                   </ng-container>
 
                   <!-- Estado Denuncia Column -->
-                  <ng-container matColumnDef="d_estado">
+                  <ng-container matColumnDef="lEstadoDenCo">
                     <th mat-header-cell *matHeaderCellDef> Estado </th>
-                    <td mat-cell *matCellDef="let element"> {{element.d_estado}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.lEstadoDenCo}} </td>
                   </ng-container>
 
-                  <!-- Nombre ciudadano Column -->
+                  <!-- Nombre ciudadano Column 
                   <ng-container matColumnDef="d_nombrecompleto">
                     <th mat-header-cell *matHeaderCellDef> Ciudadano </th>
-                    <td mat-cell *matCellDef="let element"> {{element.d_nombrecompleto}} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.d_nombrecompleto}} </td>
                   </ng-container>
+                  -->
 
                   <!-- Correo Column -->
                   <ng-container matColumnDef="acciones">
                     <th mat-header-cell *matHeaderCellDef> Acciones </th>
-                    <td mat-cell *matCellDef="let element" class="center">
+                    <td mat-cell *matCellDef="let row" class="center">
                       <div class="d-flex flex-wrap">
                         <!-- boton editar -->
                         <button matTooltip="Editar" class="opc_accion">

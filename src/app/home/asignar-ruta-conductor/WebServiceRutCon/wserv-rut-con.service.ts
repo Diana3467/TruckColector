@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Conductor } from '../../modelos/conductor';
 import { Ruta } from '../../modelos/ruta';
+import { AsigRutaCond } from '../../modelos/asig-ruta-cond';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,21 +11,34 @@ import { Ruta } from '../../modelos/ruta';
 export class WservRutConService {
 
   constructor(private http:HttpClient) { }
+  
+  url: string = 'http://localhost:7570/';
 
   public getlistaconductores(){
-    return this.http.get<Conductor[]>('http://localhost:7570/api/conductor/listaconductor');
+    return this.http.get<Conductor[]>(this.url + 'api/conductor/listaconductor');
   }
   public getlistarutas(){
-    return this.http.get<Ruta[]>('http://localhost:7570/api/ruta/listaruta');
+    return this.http.get<Ruta[]>(this.url + 'api/ruta/listaruta');
+  }
+
+  
+
+
+  public AsignarRutaConductor(body: any):Observable<boolean>{
+    return this.http.post<boolean>(this.url + 'api/asigrutacond/asignar', body);
+  }
+
+  public EnviarNotificacion( body: any){
+    let header_reqs = this.createRequestOptions();
+    return this.http.post('https://fcm.googleapis.com/fcm/send', body, { headers: header_reqs });
   }
 
   private createRequestOptions() {
     let headers = new HttpHeaders({
+        "Authorization": "key=AAAAdnGVr24:APA91bFveSbktI56ptxNgmY3URIXZaIBBmfbDOTTDaT0QQ4WtK-mY8R4d5tJsmLDmxwrWccha4oTdKtvL8KPjZDDWxxRjMAlOhLSyEi1gc3rzrUuhterbHUSYZtenLTS--V1S8XI-v8A",
         "Content-Type": "application/json"
     });
     return headers;
   }
-
-
 
 }

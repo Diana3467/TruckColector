@@ -26,6 +26,11 @@ export class AsignarRutaConductorComponent implements OnInit {
   itemruta: Ruta[];
   itemconductor: Conductor[];
 
+  respuestaAsignacion:boolean = false;
+
+  fechaini_conver:string;
+  fechafin_conver:string;
+
 
   displayedColumns: string[] = ['codigo', 'ruta', 'conductor', 'acciones'];
   searchForm: any;
@@ -53,5 +58,44 @@ export class AsignarRutaConductorComponent implements OnInit {
       fecfin: new FormControl(null)
     });
   }
+
+  public AsignarRutaAlConductor(){
+    //this.searchForm.value.selectruta.toString();
+    //this.searchForm.value.selectconductor.toString();
+    //this.searchForm.value.fecinit.toString();
+    //this.searchForm.value.fecfin.toString();
+
+    //this.fechaini_conver =  this.searchForm.value.fecinit.transform(Date.now(), 'dd/MM/yyyy').toString();
+    //this.fechafin_conver = this.searchForm.value.fecfin.transform(Date.now(), 'dd/MM/yyyy').toString();
+
+    this.fechaini_conver =  this.searchForm.value.fecinit.toString();
+    this.fechafin_conver = this.searchForm.value.fecfin.toString();
+
+    //console.log(this.searchForm.value.fecinit.toString());
+    //console.log(this.searchForm.value.fecfin.toString());
+
+    console.log(this.fechaini_conver);
+    console.log(this.fechafin_conver);
+
+
+    /*this.WebServiceRutaConductor.AsignarRutaConductor(
+      {
+        "nCodigoRuta": this.searchForm.value.selectruta.toString(),
+        "nCodigoCond": this.searchForm.value.selectconductor.toString(),
+        "dFechaInicio": this.searchForm.value.fecinit.toString().transform(Date.now(), 'dd/MM/yyyy'),
+        "dFechaFin": this.searchForm.value.fecfin.toString().transform(Date.now(), 'dd/MM/yyyy'),
+        "nCodigoAdm": '1',
+      }
+      ).subscribe(respuesta =>{ 
+        this.respuestaAsignacion = respuesta;
+      } );
+
+      
+      console.log(this.respuestaAsignacion);
+      */
+  }
+
+
+
 
 }

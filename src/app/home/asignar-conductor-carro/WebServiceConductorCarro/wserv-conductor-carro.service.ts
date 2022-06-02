@@ -10,11 +10,13 @@ export class WservConductorCarroService {
 
   constructor(private http:HttpClient) { }
 
+  url: string = 'http://localhost:7570/';
+
   public getlistaconductores(){
-    return this.http.get<Conductor[]>('http://localhost:7570/api/conductor/listaconductor');
+    return this.http.get<Conductor[]>(this.url + 'api/conductor/listaconductor');
   }
   public getlistacarros(){
-    return this.http.get<Carro[]>('http://localhost:7570/api/carro/listacarro');
+    return this.http.get<Carro[]>(this.url + 'api/carro/listacarro');
   }
 
 }

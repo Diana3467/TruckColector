@@ -9,7 +9,7 @@
           Asignar
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <form [formGroup]="searchForm">
+      <form [formGroup]="searchForm" (submit)="AsignarRutaAlConductor()">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field appearance="outline">
