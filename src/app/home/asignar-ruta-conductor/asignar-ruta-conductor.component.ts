@@ -65,34 +65,31 @@ export class AsignarRutaConductorComponent implements OnInit {
     //this.searchForm.value.fecinit.toString();
     //this.searchForm.value.fecfin.toString();
 
-    //this.fechaini_conver =  this.searchForm.value.fecinit.transform(Date.now(), 'dd/MM/yyyy').toString();
-    //this.fechafin_conver = this.searchForm.value.fecfin.transform(Date.now(), 'dd/MM/yyyy').toString();
-
-    this.fechaini_conver =  this.searchForm.value.fecinit.toString();
-    this.fechafin_conver = this.searchForm.value.fecfin.toString();
-
-    //console.log(this.searchForm.value.fecinit.toString());
-    //console.log(this.searchForm.value.fecfin.toString());
-
-    console.log(this.fechaini_conver);
-    console.log(this.fechafin_conver);
 
 
-    /*this.WebServiceRutaConductor.AsignarRutaConductor(
+    function convert(str: string) { 
+      var date = new Date(str), 
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2), 
+      day = ("0" + date.getDate()).slice(-2); 
+      
+      return [ date.getFullYear(), mnth, day].join("-"); 
+    } 
+
+    //console.log(convert(this.searchForm.value.fecinit.toString()))
+
+
+    this.WebServiceRutaConductor.AsignarRutaConductor(
       {
         "nCodigoRuta": this.searchForm.value.selectruta.toString(),
         "nCodigoCond": this.searchForm.value.selectconductor.toString(),
-        "dFechaInicio": this.searchForm.value.fecinit.toString().transform(Date.now(), 'dd/MM/yyyy'),
-        "dFechaFin": this.searchForm.value.fecfin.toString().transform(Date.now(), 'dd/MM/yyyy'),
+        "dFechaInicio": convert(this.searchForm.value.fecinit.toString()),
+        "dFechaFin": convert(this.searchForm.value.fecfin.toString()),
         "nCodigoAdm": '1',
       }
       ).subscribe(respuesta =>{ 
         this.respuestaAsignacion = respuesta;
+        console.log(this.respuestaAsignacion);
       } );
-
-      
-      console.log(this.respuestaAsignacion);
-      */
   }
 
 

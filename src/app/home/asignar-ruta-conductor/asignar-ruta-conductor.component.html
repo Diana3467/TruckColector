@@ -30,7 +30,7 @@
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Fecha inicio</mat-label>
-              <input matInput [matDatepicker]="picker1" formControlName="fecinit">
+              <input matInput [matDatepicker]="picker1" formControlName="fecinit" autocomplete="off">
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matSuffix [for]="picker1">
                 <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -41,7 +41,7 @@
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Fecha fin</mat-label>
-              <input matInput [matDatepicker]="picker2" formControlName="fecfin">
+              <input matInput [matDatepicker]="picker2" formControlName="fecfin" autocomplete="off">
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matSuffix [for]="picker2">
                 <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
