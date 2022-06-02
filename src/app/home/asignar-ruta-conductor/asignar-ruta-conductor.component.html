@@ -24,30 +24,29 @@
               <mat-label>Seleccione conductor</mat-label>
               <mat-select formControlName="selectconductor">
                 <mat-option *ngFor="let selectconductor of itemconductor" [value]="selectconductor.nCodigoCond">{{selectconductor.cNombreCond +", "+ selectconductor.cApePatCond +" "+ selectconductor.cApeMatCond}}</mat-option>
-                
               </mat-select>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Fecha inicio</mat-label>
-              <input matInput [matDatepicker]="picker" formControlName="fecinit">
+              <input matInput [matDatepicker]="picker1" formControlName="fecinit">
               <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker1">
                 <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
               </mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Fecha fin</mat-label>
-              <input matInput [matDatepicker]="picker" formControlName="fecfin">
+              <input matInput [matDatepicker]="picker2" formControlName="fecfin">
               <mat-hint>MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker2">
                 <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
               </mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
           </div>
         </div>

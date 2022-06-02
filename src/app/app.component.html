@@ -27,9 +27,7 @@
           </mat-expansion-panel-header>
           <ul>
             <li><a class="btn-sidebar">Reg. carro</a></li>
-            <li><a class="btn-sidebar">Reg. contenedor</a></li>
             <li><a class="btn-sidebar" [routerLink]="[ '/registrar-conductor' ]">Reg. conductor</a></li>
-            <li><a class="btn-sidebar">Reg. punto de recolección</a></li>
           </ul>
         </mat-expansion-panel>
       </li>
@@ -44,17 +42,11 @@
             <li><a class="btn-sidebar" [routerLink]="[ '/asignar-horario-ruta' ]">Asig. horario - ruta</a></li>
             <li><a class="btn-sidebar" [routerLink]="[ '/asignar-ruta-conductor' ]">Asig. ruta - conductor</a></li>
             <li><a class="btn-sidebar" [routerLink]="[ '/asignar-conductor-carro' ]">Asig. conductor - carro</a></li>
-            <li><a class="btn-sidebar">Asig. contenedor - P. R.</a></li>
           </ul>
         </mat-expansion-panel>
       </li>
       <li>
-        <a class="btn-sidebar">
-          <mat-icon>publish</mat-icon>Publicar
-        </a>
-      </li>
-      <li>
-        <a class="btn-sidebar">
+        <a class="btn-sidebar" [routerLink]="[ '/reclamos-consultas' ]">
           <mat-icon>book</mat-icon>Ver reclamos-consultas
         </a>
       </li>

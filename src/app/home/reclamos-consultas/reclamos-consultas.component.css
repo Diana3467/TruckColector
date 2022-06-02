@@ -1,0 +1,37 @@
+.reclamos-consultas{
+  padding: 10px;
+}
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+.contenido-tab{
+  padding: 10px 0;
+  width: 100%;
+  /* height: 70vh; */
+}
+.subcontenido-tab{
+  padding: 20px 10px;
+  width:auto;
+  height: 60vh;
+  background-color: #fff;
+}
+table {
+  width: 100%;
+}
+mat-form-field{
+  width: 100%;
+}
+.row{
+  align-items: baseline;
+}
+.opc_accion{
+  border: none;
+  color: #7A869A;
+  padding: 0;
+  border-radius: 5px;
+}
+.opc_accion>mat-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

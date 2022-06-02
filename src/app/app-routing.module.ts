@@ -6,7 +6,7 @@ import { RegistrarConductorComponent } from 'src/app/home/registrar-conductor/re
 import { AsignarConductorCarroComponent } from 'src/app/home/asignar-conductor-carro/asignar-conductor-carro.component'
 import { AsignarRutaConductorComponent } from './home/asignar-ruta-conductor/asignar-ruta-conductor.component';
 import { AsignarHorarioRutaComponent } from './home/asignar-horario-ruta/asignar-horario-ruta.component' ;
-
+import { ReclamosConsultasComponent } from './home/reclamos-consultas/reclamos-consultas.component'
 
 const routes: Routes = [
   {
@@ -36,6 +36,10 @@ const routes: Routes = [
   {
     path: 'asignar-horario-ruta',
     component: AsignarHorarioRutaComponent
+  },
+  {
+    path: 'reclamos-consultas',
+    component: ReclamosConsultasComponent
   },
 ];
 
