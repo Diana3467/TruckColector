@@ -103,11 +103,11 @@ export class RegistrarConductorComponent implements OnInit {
 
       this.dir = this.searchForm.value.direccion.toString();
       this.cor = this.searchForm.value.direccion.toString();
-      if(this.searchForm.value.direccion.toString() == null)  this.dir = '';
-      if(this.searchForm.value.correo.toString() == null)  this.cor = '';
+      if(this.searchForm.value.direccion == null)  this.dir = '';
+      if(this.searchForm.value.correo == null)  this.cor = '';
       
 
-        console.log('REGISTRO EXITOSO!!');
+        
         this.RegConductor.post(
         {
           "cNombreCond": this.searchForm.value.nombre.toString(),
@@ -120,16 +120,14 @@ export class RegistrarConductorComponent implements OnInit {
           "cCorEleCond": this.cor
         }
         ).subscribe(respuesta =>{
-          
+          this.ActualizarTabla();
+          console.log('REGISTRO EXITOSO!!');
         } );
 
-        setTimeout(() => {
-          this.ActualizarTabla()
-         }, 2000);
     }
 
     registrarconductor(){
-      console.log("Entro")
+      
     }
 
 }

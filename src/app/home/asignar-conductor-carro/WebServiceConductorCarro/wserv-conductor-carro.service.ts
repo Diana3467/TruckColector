@@ -10,6 +10,7 @@ export class WservConductorCarroService {
 
   constructor(private http:HttpClient) { }
 
+  //url: string = 'http://192.168.1.60:8083/';
   url: string = 'http://localhost:7570/';
 
   public getlistaconductores(){

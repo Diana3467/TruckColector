@@ -5,4 +5,6 @@ export interface AsigRutaCond {
     dFechaFin: string;
     lEstadoAsigRutaCond: string;
     nCodigoAdm: string;
+    cInfoCond: string;
+    cInfoRuta: string;
 }

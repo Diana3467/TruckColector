@@ -16,6 +16,8 @@ export class WServRecDenService {
     return this.http.post(url, body);
   }
   */
+ 
+  //url: string = 'http://192.168.1.60:8083/';
   url: string = 'http://localhost:7570/';
 
   public listarReclamosCiudadanos(body: any):Observable<ReclamoCiudadano[]>{

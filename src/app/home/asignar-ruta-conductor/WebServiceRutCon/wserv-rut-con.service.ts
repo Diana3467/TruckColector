@@ -12,6 +12,7 @@ export class WservRutConService {
 
   constructor(private http:HttpClient) { }
   
+  //url: string = 'http://192.168.1.60:8083/';
   url: string = 'http://localhost:7570/';
 
   public getlistaconductores(){
@@ -21,6 +22,9 @@ export class WservRutConService {
     return this.http.get<Ruta[]>(this.url + 'api/ruta/listaruta');
   }
 
+  public ListaRutaConductor(){
+    return this.http.get<AsigRutaCond[]>(this.url + 'api/asigrutacond/lista');
+  }
   
 
 

@@ -60,21 +60,22 @@
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       <!-- Codico Column -->
-      <ng-container matColumnDef="codigo">
-        <th mat-header-cell *matHeaderCellDef> Código </th>
-        <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+      <ng-container matColumnDef="cInfoRuta">
+        <th mat-header-cell *matHeaderCellDef> Ruta </th>
+        <td mat-cell *matCellDef="let element"> {{element.cInfoRuta}} </td>
       </ng-container>
 
-      <!-- Conductor Column -->
-      <ng-container matColumnDef="ruta">
-        <th mat-header-cell *matHeaderCellDef> Ruta </th>
-        <td mat-cell *matCellDef="let element"> {{element.ruta}} </td>
+      <!-- Conductor Column 
+      <ng-container matColumnDef="nCodigoCond">
+        <th mat-header-cell *matHeaderCellDef> Código Conductor </th>
+        <td mat-cell *matCellDef="let element"> {{element.nCodigoCond}} </td>
       </ng-container>
+      -->
 
       <!-- Vehículo Column -->
-      <ng-container matColumnDef="conductor">
+      <ng-container matColumnDef="cInfoCond">
         <th mat-header-cell *matHeaderCellDef> Conductor </th>
-        <td mat-cell *matCellDef="let element"> {{element.conductor}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.cInfoCond}} </td>
       </ng-container>
 
       <!-- Correo Column -->
