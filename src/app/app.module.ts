@@ -28,6 +28,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ReclamosConsultasComponent } from './home/reclamos-consultas/reclamos-consultas.component';
+import { ModalDenunciasComponent } from './home/reclamos-consultas/modal-denuncias/modal-denuncias.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { ReclamosConsultasComponent } from './home/reclamos-consultas/reclamos-c
     LoginComponent,
     DashboardComponent,
     ReclamosConsultasComponent,
+    ModalDenunciasComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,11 +65,12 @@ import { ReclamosConsultasComponent } from './home/reclamos-consultas/reclamos-c
     HttpClientModule,
     MatNativeDateModule,
     MatTabsModule,
+    MatDialogModule,
     ToastrModule.forRoot()
   ],
   providers: [
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   bootstrap: [AppComponent]
 })

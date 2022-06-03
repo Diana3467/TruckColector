@@ -5,6 +5,8 @@ import { DenunciaCiudadano } from '../modelos/DenunciaCiudadano';
 import { ReclamoCiudadano } from '../modelos/ReclamoCiudadano';
 import { ReclamoConductor } from '../modelos/ReclamoConductor';
 import { WServRecDenService } from './WebServiceReclamosConsultas/wserv-rec-den.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalDenunciasComponent } from 'src/app/home/reclamos-consultas/modal-denuncias/modal-denuncias.component'
 
 /* TABLA RECLAMOS CLIENTE */
 
@@ -65,11 +67,11 @@ export class ReclamosConsultasComponent implements OnInit {
   displayedColumns: string[] = ['cFechaRecC', 'cNombreCompleto', 'cDescripcionRecC', 'acciones'];
   displayedColumnsRConductor: string[] = ['cFechaRecCo', 'cNombreCompleto', 'cDescripcionRecCo', 'acciones'];
   displayedColumnsDemanda: string[] = ['cFechaDenC', 'cModoDenC', 'cDescripcionDenC', 'lEstadoDenCo','acciones'];
-  
+
   dataSource = new MatTableDataSource<ReclamoCiudadano>();
   dataSourceRConductor = new MatTableDataSource<ReclamoConductor>();
   dataSourceDenuncia = new MatTableDataSource<DenunciaCiudadano>();
-  
+
   filtroNuevo_Visto_Todos:string;
   filtroAnonimo_Publico_Todos: string;
 
@@ -77,7 +79,10 @@ export class ReclamosConsultasComponent implements OnInit {
   filtroObtenidoAnonimo_Publico_Todos: string;
 
 
-  constructor(private WebServiceRD:WServRecDenService,) { }
+  constructor(
+    private WebServiceRD:WServRecDenService,
+    private dialog: MatDialog,
+    ) { }
 
   ngOnInit(): void {
 
@@ -97,7 +102,7 @@ export class ReclamosConsultasComponent implements OnInit {
     });
   }
 
-  
+
   ActualizarTablaReclamosCiudadanos(filtroNVT:string) {
 
     this.filtroNuevo_Visto_Todos=filtroNVT;
@@ -107,11 +112,11 @@ export class ReclamosConsultasComponent implements OnInit {
         "filtroNuevo_Visto_Todos": this.filtroNuevo_Visto_Todos,
       }
     ).subscribe((RC: ReclamoCiudadano[])=>{
-      this.dataSource = new MatTableDataSource(); 
+      this.dataSource = new MatTableDataSource();
       this.dataSource.data = RC;
     },
-    error => {  
-      console.log('Se produjo un error mientras intentaba recuperar Lista de Reclamos de Ciudadanos!' + error);  
+    error => {
+      console.log('Se produjo un error mientras intentaba recuperar Lista de Reclamos de Ciudadanos!' + error);
     });
   }
 
@@ -124,11 +129,11 @@ export class ReclamosConsultasComponent implements OnInit {
         "filtroNuevo_Visto_Todos": this.filtroNuevo_Visto_Todos,
       }
     ).subscribe((RCo: ReclamoConductor[])=>{
-      this.dataSourceRConductor = new MatTableDataSource(); 
+      this.dataSourceRConductor = new MatTableDataSource();
       this.dataSourceRConductor.data = RCo;
     },
-    error => {  
-      console.log('Se produjo un error mientras intentaba recuperar Lista de Reclamos de Conductores!' + error);  
+    error => {
+      console.log('Se produjo un error mientras intentaba recuperar Lista de Reclamos de Conductores!' + error);
     });
   }
 
@@ -142,18 +147,18 @@ export class ReclamosConsultasComponent implements OnInit {
         "filtroAnonimo_Publico_Todos": this.filtroAnonimo_Publico_Todos,
       }
     ).subscribe((DC: DenunciaCiudadano[])=>{
-      this.dataSourceDenuncia = new MatTableDataSource(); 
+      this.dataSourceDenuncia = new MatTableDataSource();
       this.dataSourceDenuncia.data = DC;
     },
-    error => {  
-      console.log('Se produjo un error mientras intentaba recuperar Lista de Denuncias!' + error);  
+    error => {
+      console.log('Se produjo un error mientras intentaba recuperar Lista de Denuncias!' + error);
     });
   }
 
 
 
 
-  
+
 
 
 
@@ -178,7 +183,7 @@ export class ReclamosConsultasComponent implements OnInit {
     this.filtroObtenidoNuevo_Visto_Todos = this.searchFormRConduc.value.selectestadoC.toString();
     this.ActualizarTablaReclamosConductores(this.filtroObtenidoNuevo_Visto_Todos);
   }
-  
+
   public BusquedaDenunciaCiudadano(){
     this.filtroObtenidoNuevo_Visto_Todos = this.searchFormDenuncia.value.selectEstadoD.toString();
     this.filtroObtenidoAnonimo_Publico_Todos = this.searchFormDenuncia.value.selectTipoD.toString();
@@ -186,7 +191,19 @@ export class ReclamosConsultasComponent implements OnInit {
 
   }
 
+  editarDenuncia(data: DenunciaCiudadano){
+    const dialogRef = this.dialog.open(ModalDenunciasComponent, {
+      width: '750px',
+      disableClose: true,
+      data: {
+        data: data
+      }
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
 
 
