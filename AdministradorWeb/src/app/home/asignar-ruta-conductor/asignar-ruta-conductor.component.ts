@@ -18,6 +18,8 @@ const ELEMENT_DATA: DatosTablaRutaConductor[] = [
   {codigo: 3, ruta:'Ruta 9: Batanyacu - Polideportivo', conductor: 'Jose Suarez'},
 ];
 
+//verificando cambios
+
 @Component({
   selector: 'app-asignar-ruta-conductor',
   templateUrl: './asignar-ruta-conductor.component.html',
