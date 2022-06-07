@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_Inicio">
+
+    <fragment
+        android:id="@+id/nav_Inicio"
+        android:name="com.example.appcollector.ui.Inicio.Inicio"
+        android:label="@string/menu_Inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/PassFragHorarioRecolector"
+            app:destination="@id/nav_HorarioRecolector" />
+        <action
+            android:id="@+id/PassFragRealizarDenuncia"
+            app:destination="@id/nav_RealizarDenuncia" />
+        <action
+            android:id="@+id/PassFragRealizarReclamo"
+            app:destination="@id/nav_RealizarReclamo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_EditarPerfil"
+        android:name="com.example.appcollector.ui.EditarPerfil.EditarPerfil"
+        android:label=""
+        tools:layout="@layout/fragment_editar_perfil" />
+
+    <fragment
+        android:id="@+id/nav_MisReclamos"
+        android:name="com.example.appcollector.ui.MisReclamos.MisReclamos"
+        android:label="@string/menu_MisReclamos"
+        tools:layout="@layout/fragment_mis_reclamos" />
+
+    <fragment
+        android:id="@+id/nav_MisDenuncias"
+        android:name="com.example.appcollector.ui.MisDenuncias.MisDenuncias"
+        android:label="@string/menu_MisDenuncias"
+        tools:layout="@layout/fragment_mis_denuncias" />
+
+    <fragment
+        android:id="@+id/nav_HorarioRecolector"
+        android:name="com.example.appcollector.ui.Fragments.HorariosRecolector"
+        android:label=""
+        tools:layout="@layout/fragment_horarios_recolector" />
+    <fragment
+        android:id="@+id/nav_RealizarReclamo"
+        android:name="com.example.appcollector.ui.Fragments.RealizarReclamoFragment"
+        android:label=""
+        tools:layout="@layout/fragment_realizar_reclamo" />
+    <fragment
+        android:id="@+id/nav_RealizarDenuncia"
+        android:name="com.example.appcollector.ui.Fragments.RealizarDenunciaFragment"
+        android:label=""
+        tools:layout="@layout/fragment_realizar_denuncia" />
+
+
+</navigation>

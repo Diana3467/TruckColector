@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_Horario"
+                android:layout_gravity="center"
+                android:layout_width="380dp"
+                android:layout_height="280dp"
+                card_view:cardCornerRadius="4dp"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/tvEtiquetaAviso"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="¡ANUNCIO!"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:gravity="top"
+                    android:textSize="15dp"
+                    android:layout_margin="10dp"/>
+
+                <ImageView
+                    android:id="@+id/imgDetalleAviso"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="35dp"
+                    app:srcCompat="@drawable/img_base"
+                    android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/tvDescripcionAviso"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/PruebaAvisos"
+                    android:gravity="top"
+                    android:textSize="15dp"
+                    android:layout_marginTop="180dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+</LinearLayout>

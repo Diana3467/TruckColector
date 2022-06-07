@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">AppCollector</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">{Usuario}</string>
+    <string name="nav_header_subtitle">Ciudadano</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_Inicio">Inicio</string>
+    <string name="menu_EditarPerfil">Editar Perfil</string>
+    <string name="menu_MisReclamos">Mis Reclamos</string>
+    <string name="menu_MisDenuncias">Mis Denuncias</string>
+
+
+    <!--String de Inicio-->
+    <string name="Opciones">Opciones: </string>
+    <string name="Horarios_del_Recolector">Horario del Recolector</string>
+    <string name="Avisos_y_Noticias">Avisos y Noticias</string>
+    <string name="Informacion">Información</string>
+    <string name="Reclamos">Reclamos</string>
+    <string name="Denuncia_delito_Ambiental">Denuncia de delito Ambiental</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="modificar_recordatorio">Modificar Recordatorio</string>
+    <string name="desactivar_recordatorio">Desactivar Recordatorio</string>
+    <string name="otra_consulta">Otra Consulta</string>
+    <string name="Limpiar">Limpiar</string>
+    <string name="Regresar">Regresar</string>
+
+    <string-array name="calles1">
+        <item>Av. Mariategui</item>
+        <item>Jr. Manzanos</item>
+        <item>Jr. Parra del Riego</item>
+        <item>Av. Ferrocarril</item>
+        <item>Av Mariscal Castilla</item>
+    </string-array>
+
+
+    <string name="title_activity_login">LoginActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!--String de Informacion-->
+    <string name="DesechaCorrectamenteBasura">Desecha correctamente tu basura</string>
+    <string name="Reciclemos">Reciclemos!</string>
+
+    <string name="PruebaAvisos">Se comunica a los vecinos de la Av. Ferrocarril,
+        debido una avería del sistema mecánico del
+        carro recolector designado, se reprogramará la
+        hora de recogo de residuos a las 7:00 p.m.
+        Agredecemos su comprención.</string>
+
+    <string name="PruebaDesechar">Elimina los restos de comida de lo que desechas para ayudar al
+        personal que hace la selección. El envase de yogurt tomará días o incluso semanas en llegar a
+        las cooperativas de reciclaje. ¿Pensaste en el olor a ácido? ¡Exacto! Para no desperdiciar agua y
+        facilitar, deja el envase en el fregadero, para que se lave con el agua usada para lavar los platos.
+        Otra idea es aprovechar la servilleta usada para limpiar los envases antes de lavarlos.</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+</resources>
