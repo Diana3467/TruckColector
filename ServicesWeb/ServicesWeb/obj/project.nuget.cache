@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B4K4aVD9UKSMmOWQmsUB2yb4MIdsxMePODWjZ+GQsSIp60UXZm0wnDoQIY4d/P6FMdXBgS62wZpB5T/BJCIDLg==",
+  "dgSpecHash": "0ibbI0xLXqffmWkwkT3g0FmA00xJmBoGMJkKFlg0U57s+1kw57n1WI+u3E9jmvy2KLFNlJSSkkPXMMfhJcxAgQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ohc17\\source\\repos\\TruckColector\\ServicesWeb\\ServicesWeb\\ServicesWeb.csproj",
+  "projectFilePath": "D:\\SEMESTRE 9\\TALLER DE PROYECTOS\\TruckColector\\ServicesWeb\\ServicesWeb\\ServicesWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ohc17\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\ohc17\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
