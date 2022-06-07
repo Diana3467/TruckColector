@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="com.example.appcollectorcond.ui.Principal.InicioFragment"
+        android:label=""
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/PassFragMiRutaAsignada"
+            app:destination="@id/nav_mi_ruta_asignada" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_editar_datos"
+        android:name="com.example.appcollectorcond.ui.Principal.EditarDatosFragment"
+        android:label=""
+        tools:layout="@layout/fragment_editar_datos" >
+        <action
+            android:id="@+id/PassFragInicio"
+            app:destination="@id/nav_inicio" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_mostrar_incidencias"
+        android:name="com.example.appcollectorcond.ui.Principal.MostrarIncidenciasFragment"
+        android:label=""
+        tools:layout="@layout/fragment_mostrar_incidencias" />
+
+    <fragment
+        android:id="@+id/nav_mi_ruta_asignada"
+        android:name="com.example.appcollectorcond.ui.Fragment.MiRutaAsignadaFragment"
+        android:label=""
+        tools:layout="@layout/fragment_mi_ruta_asignada" />
+</navigation>
