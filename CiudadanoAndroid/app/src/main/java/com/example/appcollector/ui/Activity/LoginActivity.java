@@ -14,7 +14,7 @@ import com.example.appcollector.R;
 public class LoginActivity extends AppCompatActivity {
     TextView btnNuevoUsuario;
     Button btnIniciarSesion;
-
+    //primer cambio 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
