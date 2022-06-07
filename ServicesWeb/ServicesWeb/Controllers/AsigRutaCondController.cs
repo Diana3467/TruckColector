@@ -17,7 +17,7 @@ namespace ServicesWeb.Controllers
         {
             return AsigRutaCondRepositorio.AsignarRutaConductor(oAsigRutaCond);
         }
-        //SINCRONIZANDO GIT
+        
         // GET: api/<AsigRutaCondController>/lista/
         [HttpGet]
         [Route("api/[controller]/lista")]
