@@ -1,2 +1,2 @@
-rootProject.name = "AppCollector"
+rootProject.name = "TruckCollector"
 include ':app'
