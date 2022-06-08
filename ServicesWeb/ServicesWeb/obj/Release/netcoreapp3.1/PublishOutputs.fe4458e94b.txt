@@ -1,0 +1,13 @@
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ServicesWeb.exe
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ServicesWeb.dll
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ServicesWeb.deps.json
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ServicesWeb.runtimeconfig.json
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\ServicesWeb.pdb
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\System.Data.SqlClient.dll
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-x64\native\sni.dll
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win-x86\native\sni.dll
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
