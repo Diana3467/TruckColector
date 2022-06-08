@@ -18,7 +18,7 @@ const ELEMENT_DATA: DatosTablaRutaConductor[] = [
   {codigo: 3, ruta:'Ruta 9: Batanyacu - Polideportivo', conductor: 'Jose Suarez'},
 ];
 
-
+/* prueba */
 
 @Component({
   selector: 'app-asignar-ruta-conductor',
@@ -43,7 +43,7 @@ export class AsignarRutaConductorComponent implements OnInit {
   constructor(
     private http:HttpClient,
     private WebServiceRutaConductor: WservRutConService,
-    
+
   ) { }
 
   ngOnInit(){
@@ -68,7 +68,7 @@ export class AsignarRutaConductorComponent implements OnInit {
 
   ActualizarTablaRutaConductor(){
     this.WebServiceRutaConductor.ListaRutaConductor().subscribe((item: AsigRutaCond[])=>{
-      this.dataSource = new MatTableDataSource(); 
+      this.dataSource = new MatTableDataSource();
       this.dataSource.data = item;
     });
   }
@@ -84,13 +84,13 @@ export class AsignarRutaConductorComponent implements OnInit {
 
 
 
-    function convert(str: string) { 
-      var date = new Date(str), 
-      mnth = ("0" + (date.getMonth() + 1)).slice(-2), 
-      day = ("0" + date.getDate()).slice(-2); 
-      
-      return [ date.getFullYear(), mnth, day].join("-"); 
-    } 
+    function convert(str: string) {
+      var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+
+      return [ date.getFullYear(), mnth, day].join("-");
+    }
 
     //console.log(convert(this.searchForm.value.fecinit.toString()))
 
@@ -103,7 +103,7 @@ export class AsignarRutaConductorComponent implements OnInit {
         "dFechaFin": convert(this.searchForm.value.fecfin.toString()),
         "nCodigoAdm": '1',
       }
-      ).subscribe(respuesta =>{ 
+      ).subscribe(respuesta =>{
         this.respuestaAsignacion = respuesta;
         console.log(this.respuestaAsignacion);
         this.ActualizarTablaRutaConductor();
@@ -114,12 +114,12 @@ export class AsignarRutaConductorComponent implements OnInit {
   EnviarNotif(){
 
 
-    function convert(str: string) { 
-      var date = new Date(str), 
-      mnth = ("0" + (date.getMonth() + 1)).slice(-2), 
-      day = ("0" + date.getDate()).slice(-2); 
-      
-      return [day, mnth, date.getFullYear()].join("-"); 
+    function convert(str: string) {
+      var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+
+      return [day, mnth, date.getFullYear()].join("-");
     }
 
     this.WebServiceRutaConductor.EnviarNotificacion(
@@ -127,11 +127,11 @@ export class AsignarRutaConductorComponent implements OnInit {
         "to":"cYdsEqaTRqm1iNa2DWOy_o:APA91bGSlyVHDOa49-hbxezoMn9UdmnY0GE_lWyVHZxAJBCB_YXvyT9n_uJMEY0m8lYzzseSEcsBE5g65aXnoPlbj9smy4QFyogwd9SBbkljYJc81IYW7JuT1_xfJjEy3J_bUQfYBgw2",
         "notification": {
             "title": "ASIGNACIÓN DE RUTA",
-            "body": "Buen día señor conductor, a usted se le asignó la ruta " + this.searchForm.value.selectruta.toString() +". Desde la fecha   "+ 
+            "body": "Buen día señor conductor, a usted se le asignó la ruta " + this.searchForm.value.selectruta.toString() +". Desde la fecha   "+
             convert(this.searchForm.value.fecinit.toString())+ " hasta la fecha  "+ convert(this.searchForm.value.fecfin.toString())+". ",
         }
       }
-      ).subscribe(respuesta =>{ 
+      ).subscribe(respuesta =>{
       } );
   }
 
