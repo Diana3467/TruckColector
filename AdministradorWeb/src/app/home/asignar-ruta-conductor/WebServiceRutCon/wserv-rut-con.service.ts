@@ -4,6 +4,7 @@ import { Conductor } from '../../modelos/conductor';
 import { Ruta } from '../../modelos/ruta';
 import { AsigRutaCond } from '../../modelos/asig-ruta-cond';
 import { Observable } from 'rxjs';
+import { Utils } from '../../util/utils';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,7 @@ export class WservRutConService {
 
   constructor(private http:HttpClient) { }
   
-  //url: string = 'http://192.168.1.60:8083/';
-  url: string = 'http://localhost:7570/';
+  url:string  = Utils.url;
 
   public getlistaconductores(){
     return this.http.get<Conductor[]>(this.url + 'api/conductor/listaconductor');

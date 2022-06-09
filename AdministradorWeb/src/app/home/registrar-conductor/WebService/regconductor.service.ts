@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Conductor } from '../../modelos/conductor';
 import { Observable } from 'rxjs';
+import { Utils } from '../../util/utils';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,7 @@ export class RegconductorService {
 
   constructor(private http:HttpClient) { }
 
-  //url: string = 'http://192.168.1.60:8083/';
-  url: string = 'http://localhost:7570/';
+  url:string  = Utils.url;
 
   public post( body: any){
     let header_reqs = this.createRequestOptions();
