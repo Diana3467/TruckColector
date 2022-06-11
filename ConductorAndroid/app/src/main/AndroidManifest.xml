@@ -25,7 +25,6 @@
         <activity
             android:name=".ui.Activity.LoginActivity"
             android:exported="true"
-            android:noHistory="true"
             android:theme="@style/Theme.AppCollectorCond.NoActionBar">
 
         </activity>
