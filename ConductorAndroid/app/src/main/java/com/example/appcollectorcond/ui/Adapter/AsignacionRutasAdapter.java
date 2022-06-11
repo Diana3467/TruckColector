@@ -95,7 +95,7 @@ public class AsignacionRutasAdapter extends RecyclerView.Adapter<AsignacionRutas
 
 //        holder.txtHoraFin.setText( String.valueOf(listaAsigRutaCond.get(position).getcHoraFinHor()));
 
-        holder.imagen.setImageResource(R.drawable.camion_recolector_img);
+        holder.imagen.setImageResource(R.drawable.truck);
     }
 
     @Override

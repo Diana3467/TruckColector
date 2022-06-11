@@ -1,10 +1,14 @@
 package com.example.appcollectorcond.ui.Activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -26,20 +30,23 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static com.example.appcollectorcond.ui.Util.Util.ARCHIVO_PREFRENCIAS;
+
 public class LoginActivity extends AppCompatActivity {
 
     TextInputEditText tedDocumento, tedPassword;
     Button btnIniciarSesion;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         tedDocumento = findViewById(R.id.etDocumento);
         tedPassword = findViewById(R.id.etPassword);
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
+
         btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +92,6 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, t.getMessage() , Toast.LENGTH_SHORT).show();
             }
         });
-
 
     }
 
@@ -141,5 +147,26 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == event.KEYCODE_BACK) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("¿Desea salir de Truck Collector?")
+                    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Intent intent = new Intent(Intent.ACTION_MAIN);
+                            intent.addCategory(Intent.CATEGORY_HOME);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        }
+                    })
+                    .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.dismiss();
+                        }
+                    });
+            builder.show();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

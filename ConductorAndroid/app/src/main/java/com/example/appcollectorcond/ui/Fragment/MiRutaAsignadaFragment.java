@@ -89,7 +89,6 @@ public class MiRutaAsignadaFragment extends Fragment {
 
                     AsignacionRutasAdapter adapter = new AsignacionRutasAdapter(listaAsigRutaCond);
                     recyclerAsigRutaCond.setAdapter(adapter);
-                    Toast.makeText(getActivity(), "Recuperado Exitosamente!", Toast.LENGTH_SHORT).show();
 
                 }
                 else {
