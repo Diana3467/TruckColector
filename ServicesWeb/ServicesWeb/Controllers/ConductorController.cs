@@ -31,7 +31,7 @@ namespace ServicesWeb.Controllers
 
         // POST api/<ConductorController>/{cDNICond}
         [HttpPost]
-        [Route("api/[controller]/{cDNICond}")]
+        [Route("api/[controller]/traeruno/{cDNICond}")]
         public Conductor TraerDatosConductor(string cDNICond)
         {
             return ConductorRepositorio.TraerDatosConductor(cDNICond);

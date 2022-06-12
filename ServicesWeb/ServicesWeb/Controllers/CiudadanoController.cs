@@ -20,7 +20,7 @@ namespace ServicesWeb.Controllers
 
         // POST api/<CiudadanoController>/{cDNICiud}
         [HttpPost]
-        [Route("api/[controller]/{cDNICiud}")]
+        [Route("api/[controller]/traeruno/{cDNICiud}")]
         public Ciudadano TraerDatosConductor(string cDNICiud)
         {
             return CiudadanoRepositorio.TraerDatosCiudadano(cDNICiud);

@@ -20,7 +20,7 @@ namespace ServicesWeb.Controllers
 
         // POST api/<AdministradorController>/{cDNIAdm}
         [HttpPost]
-        [Route("api/[controller]/{cDNIAdm}")]
+        [Route("api/[controller]/traeruno/{cDNIAdm}")]
         public Administrador TraerDatosConductor(string cDNIAdm)
         {
             return AdministradorRepositorio.TraerDatosAdministrador(cDNIAdm);
