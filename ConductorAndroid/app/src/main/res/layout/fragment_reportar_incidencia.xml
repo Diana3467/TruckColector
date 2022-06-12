@@ -10,7 +10,7 @@ android:orientation="vertical"
 android:layout_marginTop="30dp">
 
 <TextView
-    android:id="@+id/bienvenidoLabel"
+    android:id="@+id/txvCabecera_Rec"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:fontFamily="@font/abel"
@@ -47,6 +47,7 @@ android:layout_marginTop="30dp">
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtHora_Rec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -59,7 +60,8 @@ android:layout_marginTop="30dp">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/abel"
-            android:inputType="date"
+            android:inputType="time"
+            android:maxLength="5"
             android:drawableRight="@drawable/ic_hora"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,6 +86,7 @@ android:layout_marginTop="30dp">
             android:fontFamily="@font/abel"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtVehiculoAsignado_Rec"
         android:layout_width="match_parent"
@@ -96,7 +99,7 @@ android:layout_marginTop="30dp">
             android:layout_height="wrap_content"
             android:fontFamily="@font/abel"/>
     </com.google.android.material.textfield.TextInputLayout>
-
+    -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtNumPlaca_Rec"
         android:layout_width="match_parent"
@@ -111,10 +114,11 @@ android:layout_marginTop="30dp">
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtDescripcion_Rec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:hint="Reclamo"
+        android:hint="Descripción Incidente"
         android:transitionName="documentoTransicion"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText

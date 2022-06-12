@@ -34,12 +34,12 @@ public class InicioFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.btnMiRutaAsignada_Inicio:{
-                findNavController(view).navigate(R.id.PassFragMiRutaAsignada);
+            case R.id.btnReportarIncidencia_Inicio:{
+                findNavController(view).navigate(R.id.PassFragReportarIncidencia);
                 break;
             }
-            case R.id.btnReportarIncidencia_Inicio:{
-
+            case R.id.btnMiRutaAsignada_Inicio:{
+                findNavController(view).navigate(R.id.PassFragMiRutaAsignada);
                 break;
             }
         }

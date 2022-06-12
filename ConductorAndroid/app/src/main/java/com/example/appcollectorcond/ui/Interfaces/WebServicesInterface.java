@@ -2,6 +2,7 @@ package com.example.appcollectorcond.ui.Interfaces;
 
 import com.example.appcollectorcond.ui.Modelos.AsigRutaCond;
 import com.example.appcollectorcond.ui.Modelos.Conductor;
+import com.example.appcollectorcond.ui.Modelos.ReclamoConductor;
 import com.example.appcollectorcond.ui.Modelos.Token;
 
 import java.util.List;
@@ -17,7 +18,6 @@ public interface WebServicesInterface {
     @HTTP(method = "POST", path = "conductor/autentificarconductor", hasBody = true)
     public Call<Token> AutentificarConductor(@Body Conductor oConductor);
 
-
     @HTTP(method = "POST", path = "conductor/traeruno/{cDNICond}", hasBody = true)
     public Call<Conductor> TraerDatosConductor(@Path("cDNICond") String cDNICond);
 
@@ -26,5 +26,8 @@ public interface WebServicesInterface {
 
     @HTTP(method = "POST", path = "asigrutacond/lista/{nCodigoCond}", hasBody = true)
     public Call<List<AsigRutaCond>> ListarRutaAsignada(@Path("nCodigoCond") String nCodigoCond);
+
+    @HTTP(method = "POST", path = "reclamoconductor/insertar", hasBody = true)
+    public Call<String> InsertarReclamoConductor(@Body ReclamoConductor oReclamoConductor);
 
 }

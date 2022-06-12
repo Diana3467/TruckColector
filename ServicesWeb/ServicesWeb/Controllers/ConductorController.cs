@@ -45,7 +45,7 @@ namespace ServicesWeb.Controllers
             return ConductorRepositorio.Grabar(oConductor);
         }
 
-        // POST api/<ConductorController>
+        // POST api/<ConductorController>/actualizar
         [HttpPost]
         [Route("api/[controller]/actualizar")]
         public bool Actualizar([FromBody] Conductor oConductor)

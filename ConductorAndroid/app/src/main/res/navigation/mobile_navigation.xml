@@ -11,6 +11,9 @@
         android:label=""
         tools:layout="@layout/fragment_inicio" >
         <action
+            android:id="@+id/PassFragReportarIncidencia"
+            app:destination="@id/nav_reportar_incidencia" />
+        <action
             android:id="@+id/PassFragMiRutaAsignada"
             app:destination="@id/nav_mi_ruta_asignada" />
     </fragment>
@@ -36,4 +39,10 @@
         android:name="com.example.appcollectorcond.ui.Fragment.MiRutaAsignadaFragment"
         android:label=""
         tools:layout="@layout/fragment_mi_ruta_asignada" />
+
+    <fragment
+        android:id="@+id/nav_reportar_incidencia"
+        android:name="com.example.appcollectorcond.ui.Fragment.ReportarIncidenciaFragment"
+        android:label=""
+        tools:layout="@layout/fragment_reportar_incidencia" />
 </navigation>
