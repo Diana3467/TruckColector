@@ -128,6 +128,51 @@ namespace ServicesWeb.Repositorio
             }
         }
 
+        public static List<ReclamoConductor> ListarReclamosUnConductor(string nCodigoCond)
+        {
+            List<ReclamoConductor> oReclamoConductor = new List<ReclamoConductor>();
+
+            string sp = StoredProcedure.USP_LISTAR_RECLAMO_UN_CONDUCTOR;
+
+            using (SqlConnection oConexion = new SqlConnection(ConexionBD.rutaConexion))
+            {
+
+                SqlCommand parametros = new SqlCommand(sp, oConexion);
+                parametros.CommandType = CommandType.StoredProcedure;
+                parametros.Parameters.AddWithValue("@x_nCodigoCond", nCodigoCond.ToString());
+
+                try
+                {
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = parametros.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            oReclamoConductor.Add(new ReclamoConductor()
+                            {
+                                nCodigoRecCo = dr["nCodigoRecCo"].ToString(),
+                                cPlacaCar = dr["cPlacaCar"].ToString(),
+                                cFechaRecCo = dr["cFechaRecCo"].ToString(),
+                                cDescripcionRecCo = dr["cDescripcionRecCo"].ToString(),
+                                lEstadoRecCo = dr["lEstadoRecCo"].ToString(),
+                            });
+                        }
+
+                    }
+                    return oReclamoConductor;
+                }
+                catch (Exception ex)
+                {
+                    return oReclamoConductor;
+                }
+                finally
+                {
+                    oConexion.Close();
+                }
+            }
+        }
+
 
 
 

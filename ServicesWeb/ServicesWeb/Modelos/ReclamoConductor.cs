@@ -13,5 +13,6 @@ namespace ServicesWeb.Modelos
         public string lEstadoRecCo { get; set; }
         public string nCodigoCond { get; set; }
         public string cNombreCompleto { get; set; }
+        public string cPlacaCar { get; set; }
     }
 }

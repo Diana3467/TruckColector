@@ -32,5 +32,13 @@ namespace ServicesWeb.Controllers
             return ReclamoConductorRepositorio.CambiarEstadoReclamoConductor(oReclamoConductor);
         }
 
+        // GET: api/<ReclamoConductorController>/lista/{nCodigoCond}
+        [HttpPost]
+        [Route("api/[controller]/lista/{nCodigoCond}")]
+        public List<ReclamoConductor> ListarReclamosUnConductor(string nCodigoCond)
+        {
+            return ReclamoConductorRepositorio.ListarReclamosUnConductor(nCodigoCond);
+        }
+
     }
 }

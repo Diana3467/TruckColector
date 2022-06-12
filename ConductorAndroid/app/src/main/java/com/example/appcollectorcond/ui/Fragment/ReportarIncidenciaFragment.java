@@ -35,6 +35,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static androidx.navigation.Navigation.findNavController;
 import static com.example.appcollectorcond.ui.Util.Util.ARCHIVO_PREFRENCIAS;
 
 public class ReportarIncidenciaFragment extends Fragment {
@@ -177,7 +178,8 @@ public class ReportarIncidenciaFragment extends Fragment {
                             preferencias.getString("nCodigoCond", ""),
                             null
                     );
-                    InsertarReclamoConductor(oReclamoConductor);
+                    InsertarReclamoConductor(oReclamoConductor, view);
+
                 }
                 else{
                     Toast.makeText(getActivity(), "Ingrese Correctamente los campos", Toast.LENGTH_SHORT).show();
@@ -187,7 +189,7 @@ public class ReportarIncidenciaFragment extends Fragment {
 
     }
 
-    public void InsertarReclamoConductor(ReclamoConductor oReclamoConductor) {
+    public void InsertarReclamoConductor(ReclamoConductor oReclamoConductor, View view) {
 
         SharedPreferences preferencias = this.getActivity().getSharedPreferences(ARCHIVO_PREFRENCIAS, Context.MODE_PRIVATE);
         String url = Util.url;
@@ -203,6 +205,7 @@ public class ReportarIncidenciaFragment extends Fragment {
                 if (response.isSuccessful()) {
                     tedDescripcion_Rec.setText("");
                     Toast.makeText(getActivity(), "Incidente Registrado!", Toast.LENGTH_SHORT).show();
+                    findNavController(view).navigate(R.id.PassFragMostrarIncidencias);
 
                 } else {
                     Toast.makeText(getActivity(), "NO HAY RESPUESTA", Toast.LENGTH_SHORT).show();

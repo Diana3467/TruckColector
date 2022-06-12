@@ -69,6 +69,7 @@ namespace ServicesWeb.Repositorio
         public const string USP_INSERTAR_RECLAMO_CONDUCTOR = "InsReclamoCond_sp";
         public const string USP_CAMBIAR_ESTADO_RECLAMO_CONDUCTOR = "UpdReclamoCond_sp";
         public const string USP_LISTAR_FILTRO_RECLAMO_CONDUCTOR = "ListReclamosConductor_sp";
+        public const string USP_LISTAR_RECLAMO_UN_CONDUCTOR = "ListReclamosUnConductor_sp";
         #endregion
 
         #region Asignar Ruta a Conductor

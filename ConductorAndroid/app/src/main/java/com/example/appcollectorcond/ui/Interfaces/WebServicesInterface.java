@@ -30,4 +30,7 @@ public interface WebServicesInterface {
     @HTTP(method = "POST", path = "reclamoconductor/insertar", hasBody = true)
     public Call<String> InsertarReclamoConductor(@Body ReclamoConductor oReclamoConductor);
 
+    @HTTP(method = "POST", path = "reclamoconductor/lista/{nCodigoCond}", hasBody = true)
+    public Call<List<ReclamoConductor>> ListarReclamosUnConductor(@Path("nCodigoCond") String nCodigoCond);
+
 }

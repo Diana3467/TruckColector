@@ -44,5 +44,9 @@
         android:id="@+id/nav_reportar_incidencia"
         android:name="com.example.appcollectorcond.ui.Fragment.ReportarIncidenciaFragment"
         android:label=""
-        tools:layout="@layout/fragment_reportar_incidencia" />
+        tools:layout="@layout/fragment_reportar_incidencia" >
+        <action
+            android:id="@+id/PassFragMostrarIncidencias"
+            app:destination="@id/nav_mostrar_incidencias" />
+    </fragment>
 </navigation>
