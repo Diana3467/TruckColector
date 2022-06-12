@@ -81,3 +81,31 @@ D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\Servic
 D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.dll
 D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.pdb
 D:\Proyecto\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.genruntimeconfig.cache
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\appsettings.json
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\ServicesWeb.exe
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\ServicesWeb.deps.json
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\ServicesWeb.runtimeconfig.json
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\ServicesWeb.runtimeconfig.dev.json
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\ServicesWeb.dll
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\ServicesWeb.pdb
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.csproj.AssemblyReference.cache
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.GeneratedMSBuildEditorConfig.editorconfig
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.AssemblyInfoInputs.cache
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.AssemblyInfo.cs
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.csproj.CoreCompileInputs.cache
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.MvcApplicationPartsAssemblyInfo.cache
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\staticwebassets\ServicesWeb.StaticWebAssets.Manifest.cache
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\staticwebassets\ServicesWeb.StaticWebAssets.xml
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\scopedcss\bundle\ServicesWeb.styles.css
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.RazorTargetAssemblyInfo.cache
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.csproj.CopyComplete
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.dll
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.pdb
+D:\SEMESTRE 9\TALLER DE PROYECTOS\TruckColector\ServicesWeb\ServicesWeb\obj\Debug\netcoreapp3.1\ServicesWeb.genruntimeconfig.cache

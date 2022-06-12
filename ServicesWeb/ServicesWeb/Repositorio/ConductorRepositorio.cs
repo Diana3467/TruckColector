@@ -128,6 +128,7 @@ namespace ServicesWeb.Repositorio
                             oConductor.cDireccCond = dr["cDireccCond"].ToString();
                             oConductor.cCorEleCond = dr["cCorEleCond"].ToString();
                             oConductor.lEstadoCond = dr["lEstadoCond"].ToString();
+                            oConductor.cPlacaCar = dr["cPlacaCar"].ToString();
                         }
 
                     }

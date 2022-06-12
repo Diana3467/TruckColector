@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 String pass = tedPassword.getText().toString();
                 Conductor oConductor = new Conductor(null,null,null,
                                                     null,doc,null,null,null,
-                                                    null, null,pass,null);
+                                                    null, null,pass,null, null);
                 AutentificarConductor(oConductor);
 
             }
@@ -127,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("cDireccCond", oDatosConductor.getcDireccCond());
                     editor.putString("cCorEleCond", oDatosConductor.getcCorEleCond());
                     editor.putString("lEstadoCond", oDatosConductor.getlEstadoCond());
-                    editor.putString("cPassCond", oDatosConductor.getcPassCond());
+                    editor.putString("cPlacaCar", oDatosConductor.getcPlacaCar());
                     editor.commit();
 //                    Toast.makeText(LoginActivity.this, "Guardado en Preferencias", Toast.LENGTH_SHORT).show();
 

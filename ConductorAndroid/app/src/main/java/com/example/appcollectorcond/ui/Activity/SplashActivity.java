@@ -44,7 +44,7 @@ public class SplashActivity extends AppCompatActivity {
         if (preferencias.contains("cNombreCond")) {
             Conductor oConductor = new Conductor(null,null,null,
                     null,preferencias.getString("cDNICond", ""),null,null,null,
-                    null, null,preferencias.getString("cDNICond", ""),null);
+                    null, null,preferencias.getString("cDNICond", ""),null, null);
 
             AutentificarConductor(oConductor);
         }

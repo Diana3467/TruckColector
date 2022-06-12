@@ -90,6 +90,7 @@ public class EditarDatosFragment extends Fragment implements View.OnClickListene
                         tedEmailCon.getText().toString(),
                         null,
                         null,
+                        null,
                         null
                         );
                 ActualizarConductor(oConductor);
@@ -129,7 +130,6 @@ public class EditarDatosFragment extends Fragment implements View.OnClickListene
                     editor.putString("cDireccCond", oConductor.getcDireccCond());
                     editor.putString("cCorEleCond", oConductor.getcCorEleCond());
                     editor.putString("lEstadoCond", oConductor.getlEstadoCond());
-                    editor.putString("cPassCond", oConductor.getcPassCond());
                     editor.commit();
 //                    Toast.makeText(getActivity(), response.body().toString(), Toast.LENGTH_SHORT).show();
                     Toast.makeText(getActivity(), "Cambios Efectuados Exitosamente!", Toast.LENGTH_SHORT).show();

@@ -19,5 +19,6 @@ namespace ServicesWeb.Modelos
         public string lEstadoCond { get; set; }
         public string cPassCond { get; set; }
         public string cInfoCond { get; set; }
+        public string cPlacaCar { get; set; }
     }
 }

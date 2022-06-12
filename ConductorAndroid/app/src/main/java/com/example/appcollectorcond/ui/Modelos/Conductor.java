@@ -13,8 +13,9 @@ public class Conductor {
     private String lEstadoCond;
     private String cPassCond;
     private String cInfoCond;
+    private String cPlacaCar;
 
-    public Conductor(String nCodigoCond, String cNombreCond, String cApePatCond, String cApeMatCond, String cDNICond, String cEdadCond, String cCelCond, String cDireccCond, String cCorEleCond, String lEstadoCond, String cPassCond, String cInfoCond) {
+    public Conductor(String nCodigoCond, String cNombreCond, String cApePatCond, String cApeMatCond, String cDNICond, String cEdadCond, String cCelCond, String cDireccCond, String cCorEleCond, String lEstadoCond, String cPassCond, String cInfoCond, String cPlacaCar) {
         this.nCodigoCond = nCodigoCond;
         this.cNombreCond = cNombreCond;
         this.cApePatCond = cApePatCond;
@@ -27,6 +28,7 @@ public class Conductor {
         this.lEstadoCond = lEstadoCond;
         this.cPassCond = cPassCond;
         this.cInfoCond = cInfoCond;
+        this.cPlacaCar = cPlacaCar;
     }
 
     public String getnCodigoCond() {
@@ -125,6 +127,14 @@ public class Conductor {
         this.cInfoCond = cInfoCond;
     }
 
+    public String getcPlacaCar() {
+        return cPlacaCar;
+    }
+
+    public void setcPlacaCar(String cPlacaCar) {
+        this.cPlacaCar = cPlacaCar;
+    }
+
     @Override
     public String toString() {
         return "Conductor{" +
@@ -140,6 +150,7 @@ public class Conductor {
                 ", lEstadoCond='" + lEstadoCond + '\'' +
                 ", cPassCond='" + cPassCond + '\'' +
                 ", cInfoCond='" + cInfoCond + '\'' +
+                ", cPlacaCar='" + cPlacaCar + '\'' +
                 '}';
     }
 }
