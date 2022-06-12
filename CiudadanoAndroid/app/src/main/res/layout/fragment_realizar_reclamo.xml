@@ -38,7 +38,7 @@
             android:hint="Fecha"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtFecha_Den"
+                android:id="@+id/edtFecha_Rec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/abel"
@@ -94,7 +94,6 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
@@ -121,14 +120,15 @@
             android:layout_marginTop="120dp">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnRegresar_Rec"
+                android:id="@+id/btnRegistrar_Rec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_nav_forma"
                 android:gravity="center"
                 android:text="Registrar Reclamo"
                 android:textSize="16sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:padding="15dp"/>
         </LinearLayout>
 
 
