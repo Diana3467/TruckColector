@@ -176,6 +176,7 @@ public class ReportarIncidenciaFragment extends Fragment {
                             tedDescripcion_Rec.getText().toString(),
                             null,
                             preferencias.getString("nCodigoCond", ""),
+                            null,
                             null
                     );
                     InsertarReclamoConductor(oReclamoConductor, view);

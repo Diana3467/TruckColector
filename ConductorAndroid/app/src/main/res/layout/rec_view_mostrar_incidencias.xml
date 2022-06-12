@@ -19,13 +19,13 @@
             android:id="@+id/card_Incidencias"
             android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="220dp"
             card_view:cardCornerRadius="4dp"
             card_view:cardElevation="10dp"
             android:layout_margin="10dp">
 
             <TextView
-                android:id="@+id/tvEtiquetaDesechar"
+                android:id="@+id/tvFecha_Inc"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Fecha Incidencia"
