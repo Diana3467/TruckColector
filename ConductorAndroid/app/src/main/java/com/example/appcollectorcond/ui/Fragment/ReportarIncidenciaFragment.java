@@ -170,9 +170,16 @@ public class ReportarIncidenciaFragment extends Fragment {
                 if(ValidarCampos() == true){
                     SharedPreferences.Editor editor = preferencias.edit();
 
+                    String fecha = String.valueOf(tedFecha_Rec.getText().toString());
+                    String[] fechaparts = fecha.split("\\-");
+                    String fecha1 = fechaparts[0]; // Dia
+                    String fecha2 = fechaparts[1]; // Mes
+                    String fecha3 = fechaparts[2]; // Año
+                    String FechaEnviar = fecha2 + "-" + fecha1 + "-" + fecha3;
+
                     ReclamoConductor oReclamoConductor = new ReclamoConductor(
                             null,
-                            tedFecha_Rec.getText().toString(),
+                            FechaEnviar,
                             tedDescripcion_Rec.getText().toString(),
                             null,
                             preferencias.getString("nCodigoCond", ""),
@@ -191,8 +198,6 @@ public class ReportarIncidenciaFragment extends Fragment {
     }
 
     public void InsertarReclamoConductor(ReclamoConductor oReclamoConductor, View view) {
-
-        SharedPreferences preferencias = this.getActivity().getSharedPreferences(ARCHIVO_PREFRENCIAS, Context.MODE_PRIVATE);
         String url = Util.url;
         Retrofit retrofit = new Retrofit.Builder().baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -206,7 +211,7 @@ public class ReportarIncidenciaFragment extends Fragment {
                 if (response.isSuccessful()) {
                     tedDescripcion_Rec.setText("");
                     Toast.makeText(getActivity(), "Incidente Registrado!", Toast.LENGTH_SHORT).show();
-                    findNavController(view).navigate(R.id.PassFragMostrarIncidencias);
+                    findNavController(view).navigate(R.id.PassFragInicio2);
 
                 } else {
                     Toast.makeText(getActivity(), "NO HAY RESPUESTA", Toast.LENGTH_SHORT).show();
