@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Bienvenido"
+                android:fontFamily="@font/abel"
                 android:textColor="#a4a4a4"
                 android:textSize="30sp"
                 android:typeface="sans"></TextView>

@@ -48,6 +48,7 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/btn_inicio_1"
                     android:text="Reportar Incidencia"
+                    android:fontFamily="@font/abel"
                     android:textColor="@color/white"
                     android:layout_gravity="center_horizontal"/>
 
@@ -58,6 +59,7 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/btn_inicio_2"
                     android:text="Mi Ruta Asignada"
+                    android:fontFamily="@font/abel"
                     android:textColor="@color/white"
                     android:layout_gravity="center_horizontal"/>
 

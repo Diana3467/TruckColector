@@ -1,5 +1,6 @@
 package com.example.appcollectorcond;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.appcollectorcond.ui.Activity.LoginActivity;
 import com.example.appcollectorcond.ui.Util.Util;
@@ -23,10 +25,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appcollectorcond.databinding.ActivityMainBinding;
 
+import static com.example.appcollectorcond.ui.Util.Util.ARCHIVO_PREFRENCIAS;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+    TextView txtUser;
 
     Button btnCerrarSesion;
 
@@ -51,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        changeNavHeaderData();
         btnCerrarSesion = findViewById(R.id.btnCerrarSesion);
 
         btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +68,18 @@ public class MainActivity extends AppCompatActivity {
                 llamarLoginActivity();
             }
         });
+    }
+
+    public void changeNavHeaderData() {
+
+        SharedPreferences preferencias = this.getSharedPreferences(ARCHIVO_PREFRENCIAS, Context.MODE_PRIVATE);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        View header = navigationView.getHeaderView(0);
+        txtUser = (TextView) header.findViewById(R.id.textNombre);
+        txtUser.setText(preferencias.getString("cNombreCond", "")+ ", "
+                + preferencias.getString("cApePatCond", "") +" "+  preferencias.getString("cApeMatCond", ""));
     }
 
     public void borrarPreferencias(){

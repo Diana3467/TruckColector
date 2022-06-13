@@ -38,10 +38,17 @@ public class MostrarIncidenciasAdapter extends RecyclerView.Adapter<MostrarIncid
     @Override
     public void onBindViewHolder(@NonNull @NotNull MostrarIncidenciasAdapter.UsuariosHolder holder, int position) {
 
-        String fecha = String.valueOf(listaReclamoConductor.get(position).getcFechaRecCo());
-        String[] fechaparts = fecha.split("\\ ");
-        String fecha1 = fechaparts[0]; // FECHA
-        holder.txtFecha.setText( fecha1 );
+        String date = String.valueOf(listaReclamoConductor.get(position).getcFechaRecCo());
+        String[] dateparts = date.split("\\ ");
+        String date1 = dateparts[0]; // FECHA
+
+        String fecha = String.valueOf(date1);
+        String[] fechaparts = fecha.split("\\/");
+        String fecha1 = fechaparts[0]; // Mes
+        String fecha2 = fechaparts[1]; // Dia
+        String fecha3 = fechaparts[2]; // Año
+        String FechaEnviar = fecha2 + "/" + fecha1 + "/" + fecha3;
+        holder.txtFecha.setText( FechaEnviar );
 
         holder.txtPlaca.setText( "Placa: "+
                 String.valueOf(listaReclamoConductor.get(position).getcPlacaCar()));

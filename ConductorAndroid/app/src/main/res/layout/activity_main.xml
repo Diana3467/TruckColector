@@ -38,6 +38,7 @@
             android:background="@drawable/btn_nav_forma"
             android:gravity="center"
             android:text="Cerrar Sesión"
+            android:fontFamily="@font/abel"
             android:textSize="16sp"
             android:textColor="@color/white"
             android:drawableLeft="@drawable/ic_box_arrow_left"

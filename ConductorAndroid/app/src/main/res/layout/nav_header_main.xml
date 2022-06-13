@@ -24,11 +24,13 @@
         />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/nav_header_title"
+        android:textSize="20dp"
+        android:fontFamily="@font/abel"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:gravity="center"/>
 
@@ -36,5 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Conductor"
+        android:textSize="17dp"
+        android:fontFamily="@font/abel"
         android:layout_gravity="center"/>
 </LinearLayout>
