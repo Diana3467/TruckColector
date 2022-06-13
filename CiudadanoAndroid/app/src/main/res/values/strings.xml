@@ -30,6 +30,8 @@
     <string name="otra_consulta">Otra Consulta</string>
     <string name="Limpiar">Limpiar</string>
     <string name="Regresar">Regresar</string>
+    <string name="DescripcionCard">Si sacas la basura en horario y lugar prohibido podrías recibir una multa desde S/440
+(Ordenanza N° 2200-2019/MML)</string>
 
     <string-array name="calles1">
         <item>Av. Mariategui</item>
