@@ -46,7 +46,7 @@
         android:label=""
         tools:layout="@layout/fragment_reportar_incidencia" >
         <action
-            android:id="@+id/PassFragMostrarIncidencias"
-            app:destination="@id/nav_mostrar_incidencias" />
+            android:id="@+id/PassFragInicio2"
+            app:destination="@id/nav_inicio" />
     </fragment>
 </navigation>

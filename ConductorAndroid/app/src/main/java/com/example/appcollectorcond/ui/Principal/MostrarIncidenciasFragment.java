@@ -85,7 +85,7 @@ public class MostrarIncidenciasFragment extends Fragment {
                         listaReclamoConductor.add(newobjReclamoConductor);
                     }
 
-                    if(listaReclamoConductor.size() ==0) txtIncidenciasRealizadas.setText("Sin Rutas Asignadas");
+                    if(listaReclamoConductor.size() ==0) txtIncidenciasRealizadas.setText("No tiene Incidentes Registrados");
 
                     MostrarIncidenciasAdapter adapter = new MostrarIncidenciasAdapter(listaReclamoConductor);
                     recyclerReclamoConductor.setAdapter(adapter);
