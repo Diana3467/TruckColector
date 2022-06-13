@@ -30,7 +30,7 @@ public class MostrarIncidenciasAdapter extends RecyclerView.Adapter<MostrarIncid
     @Override
     public MostrarIncidenciasAdapter.UsuariosHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.rec_view_mostrar_incidencias, parent, false);
-        RecyclerView.LayoutParams layoutParams=new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT );
+        RecyclerView.LayoutParams layoutParams=new RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT );
         vista.setLayoutParams(layoutParams);
         return new MostrarIncidenciasAdapter.UsuariosHolder(vista);
     }
@@ -42,9 +42,6 @@ public class MostrarIncidenciasAdapter extends RecyclerView.Adapter<MostrarIncid
         String[] fechaparts = fecha.split("\\ ");
         String fecha1 = fechaparts[0]; // FECHA
         holder.txtFecha.setText( fecha1 );
-
-
-//        holder.txtFecha.setText( String.valueOf(listaReclamoConductor.get(position).getcFechaRecCo()));
 
         holder.txtPlaca.setText( "Placa: "+
                 String.valueOf(listaReclamoConductor.get(position).getcPlacaCar()));
@@ -67,26 +64,12 @@ public class MostrarIncidenciasAdapter extends RecyclerView.Adapter<MostrarIncid
     public class UsuariosHolder extends RecyclerView.ViewHolder {
         TextView txtFecha, txtPlaca, txtDescripcion, txtEstado;
 
-//        TextView txtEtiquetaDesechar, txtInicioFin, txtFechaInicio, txtFechaFin, txtHoraInicio, txtHoraFin, txtDias;
-//        ImageView imagen;
-
         public UsuariosHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             txtFecha = itemView.findViewById(R.id.tvFecha_Inc);
             txtPlaca = itemView.findViewById(R.id.tvPlaca_Inc);
             txtDescripcion = itemView.findViewById(R.id.tvDescripcion_Inc);
             txtEstado = itemView.findViewById(R.id.tvEstado_Inc);
-
-
-
-//            imagen =itemView.findViewById(R.id.imgDetalleDesechar);
-//            txtEtiquetaDesechar =itemView.findViewById(R.id.tvEtiquetaDesechar);
-//            txtInicioFin =itemView.findViewById(R.id.tvInicioFin);
-//            txtDias =itemView.findViewById(R.id.tvDias);
-//            txtFechaInicio =itemView.findViewById(R.id.tvFechaInicio);
-//            txtFechaFin =itemView.findViewById(R.id.tvFechaFin);
-//            txtHoraInicio =itemView.findViewById(R.id.tvHoraInicio);
-//            txtHoraFin =itemView.findViewById(R.id.tvHoraFin);
         }
     }
 }
