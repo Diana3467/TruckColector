@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/abel"
         android:text="Reportar Incidente"
+        android:textColor="@color/black"
         android:layout_marginTop="25dp"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -31,20 +32,22 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtFecha_Rec"
+            style="@style/outlinedTextInputLayout"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
             android:layout_marginTop="7dp"
             android:layout_marginRight="5dp"
-            android:hint="Fecha"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:layout_marginBottom="12dp"
+            android:hint="Fecha">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtFecha_Rec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_fecha"
                 android:fontFamily="@font/abel"
                 android:inputType="date"
-                android:drawableRight="@drawable/ic_fecha"/>
+                android:textColor="@color/black"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -55,7 +58,8 @@
             android:layout_marginTop="7dp"
             android:layout_marginRight="5dp"
             android:hint="Hora"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtHora_Rec"
                 android:layout_width="match_parent"
@@ -84,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Conductor"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                style="@style/outlinedTextInputLayout">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtNombreCompleto_Rec"
                     android:layout_width="match_parent"
@@ -111,7 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Número de Placa"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                style="@style/outlinedTextInputLayout">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtNumPlaca_Rec"
                     android:layout_width="match_parent"
@@ -126,7 +130,8 @@
                 android:layout_marginBottom="12dp"
                 android:hint="Descripción Incidente"
                 android:transitionName="documentoTransicion"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:textColorHint="@color/black">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtDescripcion_Rec"
                     android:layout_width="match_parent"
@@ -154,9 +159,10 @@
             android:background="@drawable/btn_nav_forma"
             android:gravity="center"
             android:text="Registrar Incidente"
-            android:textSize="16sp"
+            android:textSize="18dp"
             android:fontFamily="@font/abel"
             android:textColor="@color/white"
+            android:textStyle="bold"
             android:padding="15dp"/>
     </LinearLayout>
 </LinearLayout>

@@ -20,6 +20,7 @@
             android:layout_gravity="top"
             android:fontFamily="@font/abel"
             android:text="Rutas Asignadas"
+            android:textColor="@color/black"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="25dp"
             android:textSize="30sp"

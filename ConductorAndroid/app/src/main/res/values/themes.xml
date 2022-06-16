@@ -12,11 +12,20 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+
     </style>
 
     <style name="Theme.AppCollectorCond.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="outlinedTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="hintTextColor">@color/black</item>
+        <item name="android:textColorHint">@color/black</item>
     </style>
 
     <style name="Theme.AppCollectorCond.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

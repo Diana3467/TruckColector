@@ -38,24 +38,36 @@ public class AsignacionRutasAdapter extends RecyclerView.Adapter<AsignacionRutas
     public void onBindViewHolder(@NonNull @NotNull AsignacionRutasAdapter.UsuariosHolder holder, int position) {
 
         holder.txtEtiquetaDesechar.setText( String.valueOf(listaAsigRutaCond.get(position).getcInfoRuta()));
-        holder.txtInicioFin.setText( "Lugares: "+ System.getProperty ("line.separator") +
-                                        String.valueOf(listaAsigRutaCond.get(position).getcDescriRuta()));
+        holder.txtInicioFin.setText(String.valueOf(listaAsigRutaCond.get(position).getcDescriRuta()));
 
-        holder.txtDias.setText( "Dias: "+ System.getProperty ("line.separator") +
-                String.valueOf(listaAsigRutaCond.get(position).getcDias()));
+        holder.txtDias.setText(String.valueOf(listaAsigRutaCond.get(position).getcDias()));
 
         String fechainicio = String.valueOf(listaAsigRutaCond.get(position).getdFechaInicio());
-        String[] fechainicioparts = fechainicio.split("\\ ");
+        String[] fechainicioparts = fechainicio.split("\\ ");//SEPARANDO FECHA Y HORA
         String fechainicio1 = fechainicioparts[0]; // FECHA
-//        String fechainicio2 = parts[1]; // HRS
-        holder.txtFechaInicio.setText( "Fecha Inicio: "+ System.getProperty ("line.separator") +fechainicio1 );
+//        String fechainicio2 = fechainicioparts[1]; // HRS
+        String fechaI = String.valueOf(fechainicio1);
+        String[] fechaIparts = fechaI.split("\\/");//SEPARANDO MES, DÍA Y AÑO
+        String fechaI1 = fechaIparts[0]; // Mes
+        String fechaI2 = fechaIparts[1]; // Dia
+        String fechaI3 = fechaIparts[2]; // Año
+        String FechaEnviarI = fechaI2 + "/" + fechaI1 + "/" + fechaI3;
+        holder.txtFechaInicio.setText( FechaEnviarI );
+
 
         String fechafin = String.valueOf(listaAsigRutaCond.get(position).getdFechaFin());
-        String[] fechafinparts = fechafin.split("\\ ");
+        String[] fechafinparts = fechafin.split("\\ ");//SEPARANDO FECHA Y HORA
         String fechafin1 = fechafinparts[0]; // FECHA
-//        String fechainicio2 = parts[1]; // HRS
-        holder.txtFechaFin.setText( "Fecha Fin: "+ System.getProperty ("line.separator") +fechafin1 );
+//        String fechainicio2 = fechafinparts[1]; // HRS
+        String fechaF = String.valueOf(fechafin1);
+        String[] fechaFparts = fechaF.split("\\/");//SEPARANDO MES, DÍA Y AÑO
+        String fechaF1 = fechaFparts[0]; // Mes
+        String fechaF2 = fechaFparts[1]; // Dia
+        String fechaF3 = fechaFparts[2]; // Año
+        String FechaEnviarF = fechaF2 + "/" + fechaF1 + "/" + fechaF3;
+        holder.txtFechaFin.setText( FechaEnviarF );
 
+//        "Fecha Fin: "+ System.getProperty ("line.separator") + fechafin1
 
 
         String horainicio = String.valueOf(listaAsigRutaCond.get(position).getcHoraInicioHor());
@@ -63,14 +75,14 @@ public class AsignacionRutasAdapter extends RecyclerView.Adapter<AsignacionRutas
 
         if(Integer.parseInt(horainicioparts[0])>=0 && Integer.parseInt(horainicioparts[0])<=12){
             String horainicio1 = horainicioparts[0] + ":" + horainicioparts[1]; // HH:MM
-            holder.txtHoraInicio.setText( "Hora Inicio: " + horainicio1 + "  a.m.");
+            holder.txtHoraInicio.setText( horainicio1 + "  a.m.");
         }
         else {
             int hi = Integer.parseInt(horainicioparts[0]);
             hi = hi-12;
             String horainicio1 = String.valueOf(hi) + ":" + horainicioparts[1]; // HH:MM
 
-            holder.txtHoraInicio.setText( "Hora Inicio: " + horainicio1 + "  p.m.");
+            holder.txtHoraInicio.setText( horainicio1 + "  p.m.");
         }
 
 
@@ -82,13 +94,13 @@ public class AsignacionRutasAdapter extends RecyclerView.Adapter<AsignacionRutas
         if(Integer.parseInt(horafinparts[0])>=0 && Integer.parseInt(horafinparts[0])<=12){
 
             String horafin1 = horafinparts[0] + ":" + horafinparts[1]; // HH:MM
-            holder.txtHoraFin.setText( "Hora Fin: " + horafin1 + "  a.m.");
+            holder.txtHoraFin.setText( horafin1 + "  a.m.");
         }
         else{
             int hf = Integer.parseInt(horafinparts[0]);
             hf = hf-12;
             String horafin1 = String.valueOf(hf) + ":" + horafinparts[1]; // HH:MM
-            holder.txtHoraFin.setText( "Hora Fin: " + horafin1 + "  p.m.");
+            holder.txtHoraFin.setText( horafin1 + "  p.m.");
         }
 
 

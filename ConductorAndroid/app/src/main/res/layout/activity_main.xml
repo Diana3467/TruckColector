@@ -41,6 +41,7 @@
             android:fontFamily="@font/abel"
             android:textSize="16sp"
             android:textColor="@color/white"
+            android:textStyle="bold"
             android:drawableLeft="@drawable/ic_box_arrow_left"
             android:padding="10dp"/>
         </LinearLayout>

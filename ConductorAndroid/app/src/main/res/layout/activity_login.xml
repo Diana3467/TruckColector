@@ -89,6 +89,7 @@
             android:layout_height="wrap_content"
             android:text="Ingresar"
             android:fontFamily="@font/abel"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_margin="12dp"
             android:layout_marginBottom="70dp"
