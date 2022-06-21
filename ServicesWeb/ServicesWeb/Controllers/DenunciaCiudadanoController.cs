@@ -31,5 +31,14 @@ namespace ServicesWeb.Controllers
         {
             return DenunciaCiudadanoRepositorio.CambiarEstadoDenunciaCiudadano(oDenunciaCiudadano);
         }
+
+        // POST: api/<DenunciaCiudadanoController>/lista/{nCodigoCiud}
+        [HttpPost]
+        [Route("api/[controller]/lista/{nCodigoCiud}")]
+        public List<DenunciaCiudadano> ListarDenunciasUnCiudadano(string nCodigoCiud)
+        {
+            return DenunciaCiudadanoRepositorio.ListarDenunciasUnCiudadano(nCodigoCiud);
+        }
+
     }
 }

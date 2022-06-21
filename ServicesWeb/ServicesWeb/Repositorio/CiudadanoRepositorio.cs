@@ -76,6 +76,8 @@ namespace ServicesWeb.Repositorio
                             oCiudadano.cCelCiud = dr["cCelCiud"].ToString();
                             oCiudadano.cNumDirecCiud = dr["cNumDirecCiud"].ToString();
                             oCiudadano.nCodigoCalle = dr["nCodigoCalle"].ToString();
+                            oCiudadano.cNombreCalle = dr["cNombreCalle"].ToString();
+                            oCiudadano.cDescZona = dr["cDescZona"].ToString();
                         }
 
                     }

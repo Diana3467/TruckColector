@@ -14,7 +14,11 @@ namespace ServicesWeb.Modelos
         public string cDNICiud { get; set; }
         public string cCelCiud { get; set; }
         public string cNumDirecCiud { get; set; }
+        public string lEstadoCiud { get; set; }
         public string cPassCiud { get; set; }
         public string nCodigoCalle { get; set; }
+        public string cNombreCalle { get; set; }
+        public string cDescZona { get; set; }
+        public string cInfoCiud { get; set; }
     }
 }

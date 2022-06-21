@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                     String mensaje_Respuesta = otok.getcMensajeAut();
                     Toast.makeText(LoginActivity.this, mensaje_Respuesta, Toast.LENGTH_SHORT).show();
                     if(mensaje_Respuesta.equals("INGRESO EXITOSO")){
-                        llamarActivityMain();
+
                         TraerDatosConductor(oConductor.getcDNICond().toString());
                     }
                 }
@@ -130,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("cPlacaCar", oDatosConductor.getcPlacaCar());
                     editor.commit();
 //                    Toast.makeText(LoginActivity.this, "Guardado en Preferencias", Toast.LENGTH_SHORT).show();
-
+                    llamarActivityMain();
                 }
                 else {
                     Toast.makeText(LoginActivity.this,"NO HAY RESPUESTA", Toast.LENGTH_SHORT).show();

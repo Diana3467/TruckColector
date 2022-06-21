@@ -10,11 +10,12 @@
     android:layout_marginTop="30dp">
 
     <TextView
-        android:id="@+id/bienvenidoLabel"
+        android:id="@+id/txvCabecera_Rec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/abel"
-        android:text="Reclamos"
+        android:text="Reportar Reclamo"
+        android:textColor="@color/black"
         android:layout_marginTop="25dp"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -30,107 +31,138 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtFecha_Rec"
+            style="@style/outlinedTextInputLayout"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
             android:layout_marginTop="7dp"
             android:layout_marginRight="5dp"
-            android:hint="Fecha"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:layout_marginBottom="12dp"
+            android:hint="Fecha">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtFecha_Rec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_fecha"
                 android:fontFamily="@font/abel"
-                android:inputType="date"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
-        android:orientation="vertical">
-
-
-        <com.google.android.material.textfield.TextInputLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombres"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtNombre_Rec"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/abel"/>
+                android:inputType="date"
+                android:textColor="@color/black"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Apellido Paterno"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtApellidoPaterno_Rec"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/abel"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Apellido Materno"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtApellidoMaterno_Rec"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/abel"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtHora_Rec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:hint="Reclamo"
-            android:transitionName="documentoTransicion"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="5dp"
+            android:hint="Hora"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtDescripcion_Rec"
+                android:id="@+id/edtHora_Rec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/abel"
-                android:inputType="textMultiLine"/>
+                android:inputType="time"
+                android:maxLength="5"
+                android:drawableRight="@drawable/ic_hora"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+    </LinearLayout>
 
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="408dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:gravity="center"
-            android:layout_marginTop="120dp">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnRegistrar_Rec"
-                android:layout_width="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtNombreCompleto_Rec"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/btn_nav_forma"
-                android:gravity="center"
-                android:text="Registrar Reclamo"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:padding="15dp"/>
+                android:hint="Nombres"
+                style="@style/outlinedTextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtNombreCompleto_Rec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abel"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtVehiculoAsignado_Rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vehiculo Asignado"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtVehiculoAsignado_Rec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abel"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtApellidosCompleto_Rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Apellidos"
+                style="@style/outlinedTextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtApellidosCompleto_Rec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abel"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtDescripcion_Rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:hint="Descripción Reclamo"
+                android:transitionName="documentoTransicion"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:textColorHint="@color/black">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtDescripcion_Rec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abel"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
         </LinearLayout>
+    </ScrollView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRegistrar_Rec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_nav_forma"
+            android:gravity="center"
+            android:text="Registrar Reclamo"
+            android:textSize="18dp"
+            android:fontFamily="@font/abel"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:padding="15dp"/>
     </LinearLayout>
 </LinearLayout>

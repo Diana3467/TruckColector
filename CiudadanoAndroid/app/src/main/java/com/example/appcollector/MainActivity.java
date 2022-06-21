@@ -1,13 +1,17 @@
 package com.example.appcollector;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.appcollector.ui.Activity.LoginActivity;
 import com.example.appcollector.ui.Inicio.Inicio;
+import com.example.appcollector.ui.Util.Util;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -17,6 +21,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import static com.example.appcollector.ui.Util.Util.ARCHIVO_PREFRENCIAS;
 
 import com.example.appcollector.databinding.ActivityMainBinding;
 
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
+    TextView txtUser;
 
     Button btnCerrarSesion;
 
@@ -63,21 +69,42 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
 
-
+        changeNavHeaderData();
         btnCerrarSesion = findViewById(R.id.btnCerrarSesion);
 
         btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(i);
+                borrarPreferencias();
+                llamarLoginActivity();
             }
         });
 
-
-
     }
+
+    public void changeNavHeaderData() {
+
+        SharedPreferences preferencias = this.getSharedPreferences(ARCHIVO_PREFRENCIAS, Context.MODE_PRIVATE);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        View header = navigationView.getHeaderView(0);
+        txtUser = (TextView) header.findViewById(R.id.textNombre);
+        txtUser.setText(preferencias.getString("cNombreCiud", "")+ ", "
+                + preferencias.getString("cApePatCiud", "") +" "+  preferencias.getString("cApeMatCiud", ""));
+    }
+
+    public void borrarPreferencias(){
+        SharedPreferences.Editor borrandosharedpreferences = getSharedPreferences(Util.ARCHIVO_PREFRENCIAS, MODE_PRIVATE).edit();
+        borrandosharedpreferences.clear().apply();
+    }
+
+    public void llamarLoginActivity(){
+        Intent i = new Intent(this, LoginActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

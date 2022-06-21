@@ -15,193 +15,195 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/abel"
         android:text="Denuncias"
+        android:textColor="@color/black"
         android:layout_marginTop="25dp"
         android:textSize="30sp"
         android:textStyle="bold"
         android:transitionName="textTransicion"/>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="14dp"
-        android:orientation="vertical">
-        <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/outlinedTextInputLayout"
+            android:id="@+id/txtFecha_Den"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="5dp"
+            android:hint="Fecha">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtFecha_Den"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:inputType="date"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:id="@+id/txtModo_Den"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="14dp"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
+            android:hint="Modo"
+            android:textColorHint="@color/black"
+            android:layout_marginTop="7dp">
 
+            <AutoCompleteTextView
+                android:id="@+id/edtModo_Den"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:inputType="none"
+                android:fontFamily="@font/abel"
+                android:textColor="@color/black"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinOtraconsulta_Horario"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:spinnerMode="dropdown"
+            android:layout_marginLeft="5dp"
+
+            />
+        -->
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="408dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="14dp"
+            android:orientation="vertical">
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtFecha_Den"
-                android:layout_width="180dp"
+                style="@style/outlinedTextInputLayout"
+                android:id="@+id/txtNombreCompleto_Den"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="5dp"
-                android:hint="Fecha"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:hint="Ciudadano">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtFecha_Den"
+                    android:id="@+id/edtNombreCompleto_Den"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/abel"
-                    android:inputType="date"/>
+                    android:textColor="@color/black"
+                    android:inputType="textMultiLine"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/txtDescripcion_Den"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Modo"
-                android:layout_marginTop="7dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+                android:layout_marginBottom="12dp"
+                android:hint="Descripción Denuncia"
+                android:textColorHint="@color/black">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtDescripcion_Den"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abel"
+                    android:textColor="@color/black"
+                    android:inputType="textMultiLine"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:id="@+id/txtUbicacionZona_Den"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ubicación Zona"
+                android:textColorHint="@color/black"
+                android:layout_marginBottom="12dp">
 
                 <AutoCompleteTextView
-                    android:id="@+id/edtModo_Den"
-                    android:layout_width="150dp"
-                    android:layout_height="55dp"
-                    android:layout_gravity="center"
+                    android:id="@+id/edtUbicacionZona_Den"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
                     android:inputType="none"
                     android:fontFamily="@font/abel"
+                    android:textColor="@color/black"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:id="@+id/txtCalleUbicacion_Den"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ubicacion Dirección"
+                android:textColorHint="@color/black"
+                android:layout_marginBottom="12dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/edtCalleUbicacion_Den"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:inputType="none"
+                    android:fontFamily="@font/abel"
+                    android:textColor="@color/black"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <!--
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spinOtraconsulta_Horario"
-                android:layout_width="150dp"
-                android:layout_height="55dp"
-                android:layout_gravity="center"
-                android:spinnerMode="dropdown"
-                android:layout_marginLeft="5dp"
-
-                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:hint="Ubicacion de lo ocurrido"
+                android:transitionName="documentoTransicion"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUbicacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abel"
+                    android:inputType="textMultiLine"/>
+            </com.google.android.material.textfield.TextInputLayout>
             -->
+
+
+
+
         </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtUsuario_Den"
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRegistrarDenuncia"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:hint="Usuario"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtUsuario_Den"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/abel"
-                android:inputType="textMultiLine"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
-
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ubicación Zona"
-            android:layout_marginBottom="12dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
-
-            <AutoCompleteTextView
-                android:id="@+id/edtUbicacionZona_Den"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:inputType="none"
-                android:fontFamily="@font/abel"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txiUbi_Den"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ubicacion Dirección"
-            android:layout_marginBottom="12dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
-
-            <AutoCompleteTextView
-                android:id="@+id/edtCalleUbicacion_Den"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:inputType="none"
-                android:fontFamily="@font/abel"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
-
-
-        <!--
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:hint="Ubicacion de lo ocurrido"
-            android:transitionName="documentoTransicion"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etUbicacion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/abel"
-                android:inputType="textMultiLine"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        -->
-
-
-        <com.google.android.material.textfield.TextInputLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:hint="Descripción"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtDescripcion_Den"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/abel"
-                android:inputType="textMultiLine"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:padding="5dp"
+            android:background="@drawable/btn_nav_forma"
             android:gravity="center"
-            android:layout_marginTop="100dp">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnRegistrarDenuncia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_nav_forma"
-                android:gravity="center"
-                android:text="Registrar Denuncia"
-                android:textSize="16sp"
-                android:textColor="@color/white"/>
-        </LinearLayout>
-
-
+            android:text="Registrar Denuncia"
+            android:textSize="18dp"
+            android:fontFamily="@font/abel"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:padding="15dp"/>
     </LinearLayout>
+
 </LinearLayout>

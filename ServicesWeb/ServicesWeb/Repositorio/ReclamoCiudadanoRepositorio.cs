@@ -128,6 +128,50 @@ namespace ServicesWeb.Repositorio
         }
 
 
+        public static List<ReclamoCiudadano> ListarReclamosUnCiudadano(string nCodigoCiud)
+        {
+            List<ReclamoCiudadano> oReclamoCiudadano = new List<ReclamoCiudadano>();
+
+            string sp = StoredProcedure.USP_LISTAR_RECLAMO_UN_CIUDADANO;
+
+            using (SqlConnection oConexion = new SqlConnection(ConexionBD.rutaConexion))
+            {
+
+                SqlCommand parametros = new SqlCommand(sp, oConexion);
+                parametros.CommandType = CommandType.StoredProcedure;
+                parametros.Parameters.AddWithValue("@x_nCodigoCiud", nCodigoCiud.ToString());
+
+                try
+                {
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = parametros.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            oReclamoCiudadano.Add(new ReclamoCiudadano()
+                            {
+                                nCodigoRecC = dr["nCodigoRecC"].ToString(),
+                                cFechaRecC = dr["cFechaRecC"].ToString(),
+                                cDescripcionRecC = dr["cDescripcionRecC"].ToString(),
+                                lEstadoRecC = dr["lEstadoRecC"].ToString(),
+                            });
+                        }
+
+                    }
+                    return oReclamoCiudadano;
+                }
+                catch (Exception ex)
+                {
+                    return oReclamoCiudadano;
+                }
+                finally
+                {
+                    oConexion.Close();
+                }
+            }
+        }
+
 
 
 

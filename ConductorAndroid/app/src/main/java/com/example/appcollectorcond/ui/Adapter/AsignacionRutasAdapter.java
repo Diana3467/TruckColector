@@ -58,7 +58,7 @@ public class AsignacionRutasAdapter extends RecyclerView.Adapter<AsignacionRutas
         String fechafin = String.valueOf(listaAsigRutaCond.get(position).getdFechaFin());
         String[] fechafinparts = fechafin.split("\\ ");//SEPARANDO FECHA Y HORA
         String fechafin1 = fechafinparts[0]; // FECHA
-//        String fechainicio2 = fechafinparts[1]; // HRS
+//        String fechafin2 = fechafinparts[1]; // HRS
         String fechaF = String.valueOf(fechafin1);
         String[] fechaFparts = fechaF.split("\\/");//SEPARANDO MES, DÍA Y AÑO
         String fechaF1 = fechaFparts[0]; // Mes

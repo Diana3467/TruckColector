@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_Denuncias"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="10dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvFecha_Den"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha Reclamos"
+                    android:textColor="@color/textDesechar"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/abel"
+                    android:gravity="top"
+                    android:textSize="20dp"
+                    android:layout_margin="10dp"/>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Modo: "
+                            android:fontFamily="@font/abel"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:gravity="top"
+                            android:textSize="18dp"
+                            android:layout_marginLeft="10dp"
+                            />
+                        <TextView
+                            android:id="@+id/tvModo_Den"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="valor"
+                            android:fontFamily="@font/abel"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:gravity="top"
+                            android:textSize="18dp"
+                            android:layout_marginRight="10dp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Descripción: "
+                            android:fontFamily="@font/abel"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:gravity="top"
+                            android:textSize="18dp"
+                            android:layout_marginLeft="10dp"
+                            />
+                        <TextView
+                            android:id="@+id/tvDescripcion_Den"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="valor"
+                            android:fontFamily="@font/abel"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:gravity="top"
+                            android:textSize="18dp"
+                            android:layout_marginRight="10dp"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Estado: "
+                            android:fontFamily="@font/abel"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:gravity="top"
+                            android:textSize="18dp"
+                            android:layout_marginLeft="10dp"
+                            />
+                        <TextView
+                            android:id="@+id/tvEstado_Den"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="valor"
+                            android:fontFamily="@font/abel"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:gravity="top"
+                            android:textSize="18dp"
+                            android:layout_marginRight="10dp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

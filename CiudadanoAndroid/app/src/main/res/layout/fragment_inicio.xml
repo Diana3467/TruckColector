@@ -35,6 +35,7 @@
                     android:layout_gravity="top"
                     android:fontFamily="@font/abel"
                     android:text="@string/Opciones"
+                    android:textColor="@color/black"
                     android:layout_marginTop="25dp"
                     android:layout_marginLeft="25dp"
                     android:textSize="30sp"
@@ -49,7 +50,10 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/btn_inicio_1"
                     android:text="@string/Horarios_del_Recolector"
+                    android:fontFamily="@font/abel"
                     android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     android:layout_gravity="center_horizontal"/>
 
                 <!--
@@ -79,7 +83,10 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/btn_inicio_2"
                     android:text="@string/Reclamos"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/abel"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     android:layout_gravity="center_horizontal"/>
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -89,7 +96,10 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/btn_inicio_1"
                     android:text="@string/Denuncia_delito_Ambiental"
+                    android:fontFamily="@font/abel"
                     android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     android:layout_gravity="center_horizontal"/>
             </LinearLayout>
 

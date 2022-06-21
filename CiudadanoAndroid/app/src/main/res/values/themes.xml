@@ -19,6 +19,13 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="outlinedTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="hintTextColor">@color/black</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
     <style name="Theme.AppCollector.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.AppCollector.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

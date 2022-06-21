@@ -131,12 +131,12 @@ public class ReportarIncidenciaFragment extends Fragment {
     public void Permitir_Controles(){
         SharedPreferences preferencias = this.getActivity().getSharedPreferences(ARCHIVO_PREFRENCIAS, Context.MODE_PRIVATE);
 
-        //Extrayendo Fecha del sistema
+        //Llenando Fecha del sistema
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
         Date date = new Date();
         tedFecha_Rec.setText(dateFormat.format(date));
 
-        //Extrayendo Fecha del sistema
+        //Llenando Hora del sistema
         SimpleDateFormat df = new SimpleDateFormat("HH:mm");
         tedHora_Rec.setText(df.format(Calendar.getInstance().getTime()));
 
@@ -177,9 +177,12 @@ public class ReportarIncidenciaFragment extends Fragment {
                     String fecha3 = fechaparts[2]; // Año
                     String FechaEnviar = fecha2 + "-" + fecha1 + "-" + fecha3;
 
+                    //Juntando la fecha y la hora del sistema para enviar como parametro
+                    String FechaHoraEnviar = FechaEnviar + " " + tedHora_Rec.getText().toString();
+
                     ReclamoConductor oReclamoConductor = new ReclamoConductor(
                             null,
-                            FechaEnviar,
+                            FechaHoraEnviar,
                             tedDescripcion_Rec.getText().toString(),
                             null,
                             preferencias.getString("nCodigoCond", ""),

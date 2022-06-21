@@ -10,6 +10,7 @@ namespace ServicesWeb.Modelos
         public string nCodigoDenC { get; set; }
         public string cModoDenC { get; set; }
         public string cFechaDenC { get; set; }
+        public string nCodigoCalle { get; set; }
         public string cUbicacionDenC { get; set; }
         public string cDescripcionDenC { get; set; }
         public string lEstadoDenCo { get; set; }

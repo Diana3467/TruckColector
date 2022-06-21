@@ -32,5 +32,14 @@ namespace ServicesWeb.Controllers
         {
             return ReclamoCiudadanoRepositorio.CambiarEstadoReclamoCiudadano(oReclamoCiudadano);
         }
+
+        // POST: api/<ReclamoCiudadanoController>/lista/{nCodigoCiud}
+        [HttpPost]
+        [Route("api/[controller]/lista/{nCodigoCiud}")]
+        public List<ReclamoCiudadano> ListarReclamosUnCiudadano(string nCodigoCiud)
+        {
+            return ReclamoCiudadanoRepositorio.ListarReclamosUnCiudadano(nCodigoCiud);
+        }
+
     }
 }

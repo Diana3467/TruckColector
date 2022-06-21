@@ -48,12 +48,20 @@
         android:id="@+id/nav_RealizarReclamo"
         android:name="com.example.appcollector.ui.Fragments.RealizarReclamoFragment"
         android:label=""
-        tools:layout="@layout/fragment_realizar_reclamo" />
+        tools:layout="@layout/fragment_realizar_reclamo" >
+        <action
+            android:id="@+id/PassFragInicio2"
+            app:destination="@id/nav_Inicio" />
+    </fragment>
     <fragment
         android:id="@+id/nav_RealizarDenuncia"
         android:name="com.example.appcollector.ui.Fragments.RealizarDenunciaFragment"
         android:label=""
-        tools:layout="@layout/fragment_realizar_denuncia" />
+        tools:layout="@layout/fragment_realizar_denuncia" >
+        <action
+            android:id="@+id/PassFragInicio3"
+            app:destination="@id/nav_Inicio" />
+    </fragment>
 
 
 </navigation>

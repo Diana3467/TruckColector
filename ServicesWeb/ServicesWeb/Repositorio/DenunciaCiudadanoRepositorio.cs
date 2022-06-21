@@ -23,7 +23,7 @@ namespace ServicesWeb.Repositorio
 
                 parametros.Parameters.AddWithValue("@x_cModoDenC", oDenunciaCiudadano.cModoDenC.ToString());
                 parametros.Parameters.AddWithValue("@x_cFechaDenC", oDenunciaCiudadano.cFechaDenC.ToString());
-                parametros.Parameters.AddWithValue("@x_cUbicacionDenC", oDenunciaCiudadano.cUbicacionDenC.ToString());
+                parametros.Parameters.AddWithValue("@x_nCodigoCalle", oDenunciaCiudadano.nCodigoCalle.ToString());
                 parametros.Parameters.AddWithValue("@x_cDescripcionDenC", oDenunciaCiudadano.cDescripcionDenC.ToString());
                 parametros.Parameters.AddWithValue("@x_nCodigoCiud", oDenunciaCiudadano.nCodigoCiud.ToString());
 
@@ -130,6 +130,51 @@ namespace ServicesWeb.Repositorio
             }
         }
 
+
+        public static List<DenunciaCiudadano> ListarDenunciasUnCiudadano(string nCodigoCiud)
+        {
+            List<DenunciaCiudadano> oDenunciaCiudadano = new List<DenunciaCiudadano>();
+
+            string sp = StoredProcedure.USP_LISTAR_DENUNCIA_UN_CIUDADANO;
+
+            using (SqlConnection oConexion = new SqlConnection(ConexionBD.rutaConexion))
+            {
+
+                SqlCommand parametros = new SqlCommand(sp, oConexion);
+                parametros.CommandType = CommandType.StoredProcedure;
+                parametros.Parameters.AddWithValue("@x_nCodigoCiud", nCodigoCiud.ToString());
+
+                try
+                {
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = parametros.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            oDenunciaCiudadano.Add(new DenunciaCiudadano()
+                            {
+                                nCodigoDenC = dr["nCodigoDenC"].ToString(),
+                                cModoDenC = dr["cModoDenC"].ToString(),
+                                cFechaDenC = dr["cFechaDenC"].ToString(),
+                                cDescripcionDenC = dr["cDescripcionDenC"].ToString(),
+                                lEstadoDenCo = dr["lEstadoDenCo"].ToString(),
+                            });
+                        }
+
+                    }
+                    return oDenunciaCiudadano;
+                }
+                catch (Exception ex)
+                {
+                    return oDenunciaCiudadano;
+                }
+                finally
+                {
+                    oConexion.Close();
+                }
+            }
+        }
 
 
 

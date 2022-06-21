@@ -28,11 +28,11 @@
             android:layout_marginBottom="14dp"
             android:orientation="vertical">
             <com.google.android.material.textfield.TextInputLayout
-
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombres"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:textColorHint="@color/black">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtNombre_EP"
                     android:layout_width="match_parent"
@@ -41,10 +41,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Apellido Paterno"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:textColorHint="@color/black">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtApellidoPaterno_EP"
                     android:layout_width="match_parent"
@@ -53,10 +54,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Apellido Materno"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:textColorHint="@color/black">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtApellidoMaterno_EP"
                     android:layout_width="match_parent"
@@ -65,11 +67,10 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-
+                style="@style/outlinedTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Documento Identidad"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:hint="Documento Identidad">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtDocumento_EP"
                     android:layout_width="match_parent"
@@ -80,11 +81,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Celular"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:textColorHint="@color/black">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtCelular_EP"
                     android:layout_width="match_parent"
@@ -107,10 +108,12 @@
 
                 !-->
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:id="@+id/txiUbiZona_EP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Ubicación Zona"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+                android:textColorHint="@color/black">
 
                 <AutoCompleteTextView
                     android:id="@+id/edtCalleUbicacionZona_EP"
@@ -123,11 +126,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:id="@+id/txiUbi_EP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Ubicacion Dirección"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+                android:textColorHint="@color/black">
 
                 <AutoCompleteTextView
                     android:id="@+id/edtCalleUbicacion_EP"
@@ -141,11 +145,11 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Número"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:textColorHint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtNumeroUbicacion_EP"

@@ -35,6 +35,7 @@
                     android:layout_gravity="top"
                     android:layout_marginLeft="25dp"
                     android:text="Horario del Recolector"
+                    android:textColor="@color/black"
                     android:layout_marginTop="25dp"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -55,7 +56,8 @@
                         android:text="  El carro recolector de basura pasa por:"
                         android:gravity="top"
                         android:fontFamily="@font/abel"
-                        android:textSize="15dp"/>
+                        android:textColor="@color/black"
+                        android:textSize="18dp"/>
 
                     <TextView
                         android:id="@+id/tvCalle_Card"
@@ -66,7 +68,8 @@
                         android:textSize="25dp"
                         android:gravity="center_horizontal"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/abel"/>
+                        android:fontFamily="@font/abel"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -74,8 +77,9 @@
                         android:layout_marginTop="65dp"
                         android:text="  los días:"
                         android:gravity="top"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/abel"/>
+                        android:textSize="18dp"
+                        android:fontFamily="@font/abel"
+                        android:textColor="@color/black"/>
 
                     <TextView
                         android:id="@+id/tvdias_Card"
@@ -84,9 +88,10 @@
                         android:text="Martes y Jueves"
                         android:fontFamily="@font/abel"
                         android:layout_marginTop="80dp"
-                        android:textSize="20dp"
+                        android:textSize="22dp"
                         android:gravity="center_horizontal"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -94,8 +99,9 @@
                         android:layout_marginTop="105dp"
                         android:text="  entre las:"
                         android:gravity="top"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/abel"/>
+                        android:textSize="18dp"
+                        android:fontFamily="@font/abel"
+                        android:textColor="@color/black"/>
 
                     <TextView
                         android:id="@+id/tvhora_Card"
@@ -104,6 +110,7 @@
                         android:text="6:00 a.m. - 7:00 a.m."
                         android:layout_marginTop="120dp"
                         android:fontFamily="@font/abel"
+                        android:textStyle="bold"
                         android:textSize="20dp"
                         android:gravity="center_horizontal"
                         android:textColor="@color/black"/>
@@ -119,7 +126,11 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/btn_nav_forma"
                     android:text="Modificar Recordatorio"
-                    android:textColor="@color/white" />
+                    android:textSize="18dp"
+                    android:fontFamily="@font/abel"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:padding="15dp" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnDesactivarRecordatorio_Horario"
@@ -128,7 +139,11 @@
                     android:layout_margin="10dp"
                     android:background="@drawable/btn_transparente"
                     android:text="Desactivar Recordatorio"
-                    android:textColor="@color/black" />
+                    android:textSize="18dp"
+                    android:fontFamily="@font/abel"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:padding="15dp" />
             </LinearLayout>
             <!--
                         <LinearLayout

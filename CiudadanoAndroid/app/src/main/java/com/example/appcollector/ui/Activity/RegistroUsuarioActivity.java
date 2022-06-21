@@ -21,7 +21,6 @@ import android.widget.Toast;
 
 import com.example.appcollector.MainActivity;
 import com.example.appcollector.R;
-import com.example.appcollector.databinding.ActivityMainBinding;
 import com.example.appcollector.ui.Interfaces.WebServicesInterface;
 import com.example.appcollector.ui.Modelos.CalleZona;
 import com.example.appcollector.ui.Util.Util;

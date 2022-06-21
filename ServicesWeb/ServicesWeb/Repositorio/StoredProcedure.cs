@@ -57,12 +57,14 @@ namespace ServicesWeb.Repositorio
         public const string USP_INSERTAR_DENUNCIA = "InsDenunciaCiud_sp";
         public const string USP_CAMBIAR_ESTADO_DENUNCIA = "UpdDenunciaCiud_sp";
         public const string USP_LISTAR_FILTRO_DENUNCIA = "ListDenunciasCiudadano_sp";
+        public const string USP_LISTAR_DENUNCIA_UN_CIUDADANO = "ListDenunciasUnCiudadano_sp";
         #endregion
 
         #region Reclamo Ciudadano
         public const string USP_INSERTAR_RECLAMO_CIUDADANO = "InsReclamoCiud_sp";
         public const string USP_CAMBIAR_ESTADO_RECLAMO_CIUDADANO = "UpdReclamoCiud_sp";
         public const string USP_LISTAR_FILTRO_RECLAMO_CIUDADANO = "ListReclamosCiudadano_sp";
+        public const string USP_LISTAR_RECLAMO_UN_CIUDADANO = "ListReclamosUnCiudadano_sp";
         #endregion
 
         #region Reclamo Conductor
