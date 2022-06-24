@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_Inicio"
         android:name="com.example.appcollector.ui.Inicio.Inicio"
-        android:label="@string/menu_Inicio"
+        android:label=""
         tools:layout="@layout/fragment_inicio" >
         <action
             android:id="@+id/PassFragHorarioRecolector"
@@ -30,13 +30,13 @@
     <fragment
         android:id="@+id/nav_MisReclamos"
         android:name="com.example.appcollector.ui.MisReclamos.MisReclamos"
-        android:label="@string/menu_MisReclamos"
+        android:label=""
         tools:layout="@layout/fragment_mis_reclamos" />
 
     <fragment
         android:id="@+id/nav_MisDenuncias"
         android:name="com.example.appcollector.ui.MisDenuncias.MisDenuncias"
-        android:label="@string/menu_MisDenuncias"
+        android:label=""
         tools:layout="@layout/fragment_mis_denuncias" />
 
     <fragment
