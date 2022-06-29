@@ -11,6 +11,7 @@ namespace ServicesWeb.Controllers
     [ApiController]
     public class CiudadanoController : Controller
     {
+        // POST api/<CiudadanoController>/autentificarciudadano
         [HttpPost]
         [Route("api/[controller]/autentificarciudadano")]
         public Token AutentificarCiudadano([FromBody] Ciudadano oCiudadano)
@@ -18,7 +19,7 @@ namespace ServicesWeb.Controllers
             return CiudadanoRepositorio.AutentificarCiudadano(oCiudadano);
         }
 
-        // POST api/<CiudadanoController>/{cDNICiud}
+        // POST api/<CiudadanoController>/traeruno/{cDNICiud}
         [HttpPost]
         [Route("api/[controller]/traeruno/{cDNICiud}")]
         public Ciudadano TraerDatosConductor(string cDNICiud)
@@ -28,10 +29,26 @@ namespace ServicesWeb.Controllers
 
         // POST api/<CiudadanoController>
         [HttpPost]
+        [Route("api/[controller]")]
+        public Token Grabar([FromBody] Ciudadano oCiudadano)
+        {
+            return CiudadanoRepositorio.Grabar(oCiudadano);
+        }
+
+        // POST api/<CiudadanoController>/actualizar
+        [HttpPost]
         [Route("api/[controller]/actualizar")]
         public bool Actualizar([FromBody] Ciudadano oCiudadano)
         {
             return CiudadanoRepositorio.Actualizar(oCiudadano);
+        }
+
+        // POST api/<CiudadanoController>/traerhorario/{nCodigoCalle}
+        [HttpPost]
+        [Route("api/[controller]/traerhorario/{nCodigoCalle}")]
+        public Horario TraerHorarioCiudadano(string nCodigoCalle)
+        {
+            return CiudadanoRepositorio.TraerHorarioCiudadano(nCodigoCalle);
         }
 
     }

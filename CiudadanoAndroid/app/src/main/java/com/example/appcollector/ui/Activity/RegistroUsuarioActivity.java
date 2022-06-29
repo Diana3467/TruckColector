@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,8 @@ import com.example.appcollector.MainActivity;
 import com.example.appcollector.R;
 import com.example.appcollector.ui.Interfaces.WebServicesInterface;
 import com.example.appcollector.ui.Modelos.CalleZona;
+import com.example.appcollector.ui.Modelos.Ciudadano;
+import com.example.appcollector.ui.Modelos.Token;
 import com.example.appcollector.ui.Util.Util;
 import com.google.android.datatransport.runtime.retries.Retries;
 import com.google.android.material.navigation.NavigationView;
@@ -62,7 +65,7 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
             "El Embudo - Agua de las Vírgenes", "Los Andes - Las Brisas", "Justicia Paz y Vida", "Registros y Terminal"
     };
 
-
+    String nCodigoCalle_Grabar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,11 +121,10 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
 
                 CalleZona objCallezona = (CalleZona) adapterView.getItemAtPosition(i);
 
-                String id = objCallezona.getnCodigoCalle().toString();
-
+                nCodigoCalle_Grabar = objCallezona.getnCodigoCalle().toString();
 
                 edtUbicacion.setError(null);
-                Toast.makeText(RegistroUsuarioActivity.this, id, Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistroUsuarioActivity.this, nCodigoCalle_Grabar, Toast.LENGTH_SHORT).show();
                 validar_sppiner = true;
             }
         });
@@ -131,7 +133,22 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validar()){
-                    Toast.makeText(RegistroUsuarioActivity.this, "Datos Registrados!!", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(RegistroUsuarioActivity.this, "Datos Registrados!!", Toast.LENGTH_SHORT).show();
+                    Ciudadano oCiudadano = new Ciudadano(null,
+                            edtNombre.getText().toString(),
+                            edtApellidoPaterno.getText().toString(),
+                            edtApellidoMaterno.getText().toString(),
+                            edtDNI.getText().toString(),
+                            edtCelular.getText().toString(),
+                            edtNumCasa.getText().toString(),
+                            null,
+                            null,
+                            nCodigoCalle_Grabar,
+                            null,
+                            null,
+                            null);
+
+                    GrabarCiudadano(oCiudadano);
                 }
                 else{
                     Toast.makeText(RegistroUsuarioActivity.this, "Ingrese correctamente los datos", Toast.LENGTH_SHORT).show();
@@ -160,8 +177,6 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         String apellidopaterno = edtApellidoPaterno.getText().toString();
         String apellidomaterno = edtApellidoMaterno.getText().toString();
         String dni = edtDNI.getText().toString();
-        String celular = edtCelular.getText().toString();
-        String ubicacion = edtUbicacion.getText().toString();
         String num_casa = edtNumCasa.getText().toString();
 
         if (nombre.isEmpty())
@@ -254,4 +269,92 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         });
 
     }
+
+    public void GrabarCiudadano(Ciudadano oCiudadano){
+        String url = Util.url;
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create()).build();
+
+        WebServicesInterface CondWebServ = retrofit.create(WebServicesInterface.class);
+        Call<Token> call = CondWebServ.GrabarCiudadano(oCiudadano);
+
+        call.enqueue(new Callback<Token>() {
+            @Override
+            public void onResponse(Call<Token> call, Response<Token> response) {
+                if(response.isSuccessful()){
+                    Token otok = response.body();
+                    String mensaje_Respuesta = otok.getcMensajeAut();
+                    Toast.makeText(RegistroUsuarioActivity.this, mensaje_Respuesta, Toast.LENGTH_SHORT).show();
+                    if(mensaje_Respuesta.equals("REGISTRO EXITOSO")){
+
+                        TraerDatosCiudadano(edtDNI.getText().toString());
+                    }
+                }
+                else {
+                    Toast.makeText(RegistroUsuarioActivity.this,"NO HAY RESPUESTA", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Token> call, Throwable t) {
+                Toast.makeText(RegistroUsuarioActivity.this, t.getMessage() , Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    public void TraerDatosCiudadano(String cDNICiud){
+        String url = Util.url;
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create()).build();
+
+        WebServicesInterface CondWebServ = retrofit.create(WebServicesInterface.class);
+        Call<Ciudadano> call = CondWebServ.TraerDatosCiudadano(cDNICiud);
+
+        call.enqueue(new Callback<Ciudadano>() {
+            @Override
+            public void onResponse(Call<Ciudadano> call, Response<Ciudadano> response) {
+                if(response.isSuccessful()){
+                    Ciudadano oDatosCiudadano = response.body();
+
+                    SharedPreferences preferencias = getSharedPreferences(Util.ARCHIVO_PREFRENCIAS, MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferencias.edit();
+                    editor.putString("nCodigoCiud", oDatosCiudadano.getnCodigoCiud());
+                    editor.putString("cNombreCiud", oDatosCiudadano.getcNombreCiud());
+                    editor.putString("cApePatCiud", oDatosCiudadano.getcApePatCiud());
+                    editor.putString("cApeMatCiud", oDatosCiudadano.getcApeMatCiud());
+                    editor.putString("cDNICiud", oDatosCiudadano.getcDNICiud());
+                    editor.putString("cCelCiud", oDatosCiudadano.getcCelCiud());
+                    editor.putString("cNumDirecCiud", oDatosCiudadano.getcNumDirecCiud());
+                    editor.putString("nCodigoCalle", oDatosCiudadano.getnCodigoCalle());
+                    editor.putString("cNombreCalle", oDatosCiudadano.getcNombreCalle());
+                    editor.putString("cDescZona", oDatosCiudadano.getcDescZona());
+                    editor.commit();
+//                    Toast.makeText(LoginActivity.this, "Guardado en Preferencias", Toast.LENGTH_SHORT).show();
+
+                    llamarActivityMain();
+
+                }
+                else {
+                    Toast.makeText(RegistroUsuarioActivity.this,"NO HAY RESPUESTA", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Ciudadano> call, Throwable t) {
+                Toast.makeText(RegistroUsuarioActivity.this, t.getMessage() , Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+    public void llamarActivityMain(){
+        Intent i = new Intent(RegistroUsuarioActivity.this, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+    }
+
+
 }

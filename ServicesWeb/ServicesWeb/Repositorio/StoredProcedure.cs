@@ -22,9 +22,10 @@ namespace ServicesWeb.Repositorio
 
         #region Ciudadano
         public const string USP_AUTENTIFICAR_CIUDADANO = "AutUsuCiud_sp";
-        public const string USP_CIUDADANO_GRABAR = "";
+        public const string USP_CIUDADANO_GRABAR = "InsCiudadano_sp";
         public const string USP_TRAER_UNO_CIUDADANO = "TraerUsuCiud_sp";
         public const string USP_ACTUALIZAR_DATOS_CIUDADANO = "UpdCiudadano_sp";
+        public const string USP_TRAER_HORARIO_CIUDADANO = "TraerHorarioCiud_sp";
         #endregion
 
         #region Administrador

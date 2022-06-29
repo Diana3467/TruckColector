@@ -94,6 +94,47 @@ namespace ServicesWeb.Repositorio
             }
         }
 
+        public static Token Grabar(Ciudadano oCiudadano)
+        {
+            string sp = StoredProcedure.USP_CIUDADANO_GRABAR;
+            Token oToken = new Token();
+
+            using (SqlConnection oConexion = new SqlConnection(ConexionBD.rutaConexion))
+            {
+                SqlCommand parametros = new SqlCommand(sp, oConexion);
+                parametros.CommandType = CommandType.StoredProcedure;
+                parametros.Parameters.AddWithValue("@x_cNombreCiud", oCiudadano.cNombreCiud.ToString());
+                parametros.Parameters.AddWithValue("@x_cApePatCiud", oCiudadano.cApePatCiud.ToString());
+                parametros.Parameters.AddWithValue("@x_cApeMatCiud", oCiudadano.cApeMatCiud.ToString());
+                parametros.Parameters.AddWithValue("@x_cDNICiud", oCiudadano.cDNICiud.ToString());
+                parametros.Parameters.AddWithValue("@x_cCelCiud", oCiudadano.cCelCiud.ToString());
+                parametros.Parameters.AddWithValue("@x_cNumDirecCiud", oCiudadano.cNumDirecCiud.ToString());
+                parametros.Parameters.AddWithValue("@x_nCodigoCalle", oCiudadano.nCodigoCalle.ToString());
+
+                try
+                {
+                    oConexion.Open();
+                    using (SqlDataReader dr = parametros.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            oToken.cMensajeAut = dr["cRespuesta"].ToString();
+                        }
+
+                    }
+                    return oToken;
+                }
+                catch (IOException e)
+                {
+                    return oToken;
+                }
+                finally
+                {
+                    oConexion.Close();
+                }
+            }
+        }
+
         public static bool Actualizar(Ciudadano oCiudadano)
         {
             string sp = StoredProcedure.USP_ACTUALIZAR_DATOS_CIUDADANO;
@@ -132,6 +173,47 @@ namespace ServicesWeb.Repositorio
                 }
             }
         }
+
+        public static Horario TraerHorarioCiudadano(string nCodigoCalle)
+        {
+            string sp = StoredProcedure.USP_TRAER_HORARIO_CIUDADANO;
+            Horario oHorario = new Horario();
+
+            using (SqlConnection oConexion = new SqlConnection(ConexionBD.rutaConexion))
+            {
+
+                SqlCommand parametros = new SqlCommand(sp, oConexion);
+                parametros.CommandType = CommandType.StoredProcedure;
+                parametros.Parameters.AddWithValue("@x_nCodigoCalleParameter", nCodigoCalle.ToString());
+
+                try
+                {
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = parametros.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            oHorario.cDias = dr["cDias"].ToString();
+                            oHorario.cHoraInicioHor = dr["cHoraInicioHor"].ToString();
+                            oHorario.cHoraFinHor = dr["cHoraFinHor"].ToString();
+                        }
+
+                    }
+                    return oHorario;
+                }
+                catch (IOException e)
+                {
+                    return oHorario;
+                }
+                finally
+                {
+                    oConexion.Close();
+                }
+            }
+        }
+
+
 
 
     }
