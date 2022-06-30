@@ -1,17 +1,22 @@
 package com.example.appcollector.ui.Fragments;
 
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.provider.AlarmClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.PopupWindow;
@@ -27,6 +32,13 @@ import com.example.appcollector.ui.Modelos.Horario;
 import com.example.appcollector.ui.Modelos.ReclamoCiudadano;
 import com.example.appcollector.ui.Modelos.Token;
 import com.example.appcollector.ui.Util.Util;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,6 +56,16 @@ public class HorariosRecolector extends Fragment {
     Spinner spinCountry;
     Button btnModHorario, btnCancelHorario;
     Button btnCambiarHorario, btnCancelarCambio;
+
+    String horain1;
+    ArrayList<Integer> alarmDays1= new ArrayList<Integer>();
+    ArrayList<Integer> alarmDays2= new ArrayList<Integer>();
+
+    AutoCompleteTextView horDialog;
+    public static String [] horaest = new String[]{
+            "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"
+    };
+    String hora_anterior;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,15 +90,28 @@ public class HorariosRecolector extends Fragment {
 //            public void onNothingSelected(AdapterView<?> arg0) {
 //            }
 //        });
+
+        alarmDays2.add(Calendar.TUESDAY);
+        alarmDays2.add(Calendar.THURSDAY);
+        alarmDays2.add(Calendar.SATURDAY);
+
+        alarmDays1.add(Calendar.MONDAY);
+        alarmDays1.add(Calendar.WEDNESDAY);
+        alarmDays1.add(Calendar.FRIDAY);
+
         txtCalleHor = vista.findViewById(R.id.tvCalle_Card);
         txtDiasHor = vista.findViewById(R.id.tvdias_Card);
         txtHoraFor = vista.findViewById(R.id.tvhora_Card);
+
+
+//        horDialog = vista.findViewById(R.id.edtUbicacionZona_Reg);
+//        horDialog.setAdapter(adapSppinerHora);
 
         SharedPreferences preferencias = this.getActivity().getSharedPreferences(ARCHIVO_PREFRENCIAS, Context.MODE_PRIVATE);
         TraerHorario(preferencias.getString("nCodigoCalle", ""));
 
         btnModHorario = vista.findViewById(R.id.btnModificarRecordatorio_Horario);
-        btnCancelHorario = vista.findViewById(R.id.btnDesactivarRecordatorio_Horario);
+//        btnCancelHorario = vista.findViewById(R.id.btnDesactivarRecordatorio_Horario);
         btnModHorario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,6 +121,53 @@ public class HorariosRecolector extends Fragment {
 
                 btnCambiarHorario = dialog.findViewById(R.id.btnAceptarMod_Popup);
                 btnCancelarCambio = dialog.findViewById(R.id.btnCancelarMod_Popup);
+
+                ArrayAdapter<String> adapSppinerHora = new ArrayAdapter<>(getActivity(), R.layout.adaptador_sppiner, horaest);
+                horDialog = dialog.findViewById(R.id.autCambiarHora);
+                hora_anterior = preferencias.getString("HoraAlarma", "");
+                horDialog.setText(preferencias.getString("HoraAlarma", ""));
+                horDialog.setAdapter(adapSppinerHora);
+                horDialog.setKeyListener(null);
+
+                horDialog.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                edtUbicacionZona_Act.setText("");
+                    }
+                });
+
+                btnCambiarHorario.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        SharedPreferences.Editor editor = preferencias.edit();
+                        editor.putString("HoraAlarma", horDialog.getText().toString());
+                        editor.commit();
+
+                        int hin = Integer.parseInt(horain1) - 1;
+                        int min = 60-Integer.parseInt(horDialog.getText().toString());
+
+                        if(txtDiasHor.getText().toString().equals("Martes, Jueves y Sábado")){
+                            Intent ialarm = new Intent(AlarmClock.ACTION_SET_ALARM)
+                                    .putExtra(AlarmClock.EXTRA_MESSAGE, "DENTRO DE "+ preferencias.getString("HoraAlarma", "") +" MINUTOS PASARÁ EL CARRO RECOLECTOR POR SU ZONA")
+                                    .putExtra(AlarmClock.EXTRA_HOUR, hin)
+                                    .putExtra(AlarmClock.EXTRA_MINUTES, min)
+                                    .putExtra(AlarmClock.EXTRA_DAYS, alarmDays2);
+                            startActivity(ialarm);
+                        }
+                        else{
+                            Intent ialarm = new Intent(AlarmClock.ACTION_SET_ALARM)
+                                    .putExtra(AlarmClock.EXTRA_MESSAGE, "DENTRO DE "+ preferencias.getString("HoraAlarma", "") +" MINUTOS PASARÁ EL CARRO RECOLECTOR POR SU ZONA")
+                                    .putExtra(AlarmClock.EXTRA_HOUR, hin)
+                                    .putExtra(AlarmClock.EXTRA_MINUTES, min)
+                                    .putExtra(AlarmClock.EXTRA_DAYS, alarmDays1);
+                            startActivity(ialarm);
+                        }
+
+
+                        dialog.dismiss();
+                    }
+                });
+
 
                 btnCancelarCambio.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -118,7 +200,7 @@ public class HorariosRecolector extends Fragment {
 
                     String horain = oHorario.getcHoraInicioHor();
                     String[] horainparts = horain.split("\\:");
-                    String horain1 = horainparts[0]; // HH
+                    horain1 = horainparts[0]; // HH
                     String horain2 = horainparts[1]; // MM
 //                    String horain3 = horainparts[2]; // SS
                     String HoraInicio = horain1 + ":" + horain2;

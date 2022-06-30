@@ -11,7 +11,8 @@
         android:gravity="center_horizontal"
         android:textSize="38dp"
         android:fontFamily="@font/abel"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,24 +21,27 @@
         android:layout_marginLeft="10dp"
         android:gravity="center_horizontal"
         android:textSize="20dp"
-        android:fontFamily="@font/abel"/>
+        android:fontFamily="@font/abel"
+        android:textColor="@color/black"/>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:hint="Hora"
         android:layout_marginTop="80dp"
         android:layout_marginLeft="50dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        android:textColorHint="@color/black">
 
-    <AutoCompleteTextView
-        android:id="@+id/txtCambiarHora"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:inputType="number"
-        android:fontFamily="@font/abel"
-        android:maxLength="2"
-        />
+        <AutoCompleteTextView
+            android:id="@+id/autCambiarHora"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:inputType="number"
+            android:fontFamily="@font/abel"
+            android:maxLength="2"
+            android:textColor="@color/black"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -48,7 +52,8 @@
         android:layout_marginLeft="170dp"
         android:gravity="center_horizontal"
         android:textSize="20dp"
-        android:fontFamily="@font/abel"/>
+        android:fontFamily="@font/abel"
+        android:textColor="@color/black"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAceptarMod_Popup"

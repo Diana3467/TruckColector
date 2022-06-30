@@ -330,6 +330,7 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
                     editor.putString("nCodigoCalle", oDatosCiudadano.getnCodigoCalle());
                     editor.putString("cNombreCalle", oDatosCiudadano.getcNombreCalle());
                     editor.putString("cDescZona", oDatosCiudadano.getcDescZona());
+                    editor.putString("HoraAlarma", "10");
                     editor.commit();
 //                    Toast.makeText(LoginActivity.this, "Guardado en Preferencias", Toast.LENGTH_SHORT).show();
 
