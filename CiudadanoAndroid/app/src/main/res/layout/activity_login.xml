@@ -68,20 +68,6 @@
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--
-        <TextView
-            android:id="@+id/olvidatePassword"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textAlignment="textEnd"
-            android:textSize="20dp"
-            android:textColor="@android:color/darker_gray"
-            android:fontFamily="@font/abel"
-            android:layout_gravity="end"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="¿Olvidaste tu contraseña?"/>
-        -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnIniciarSesion"
             android:layout_width="match_parent"

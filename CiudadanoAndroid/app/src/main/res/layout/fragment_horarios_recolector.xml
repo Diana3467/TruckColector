@@ -117,8 +117,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
-
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnModificarRecordatorio_Horario"
                     android:layout_width="match_parent"
@@ -135,86 +133,7 @@
                     android:textStyle="bold"
                     android:padding="15dp" />
 
-                <!--
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnDesactivarRecordatorio_Horario"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/btn_transparente"
-                    android:text="Desactivar Recordatorio"
-                    android:textSize="18dp"
-                    android:fontFamily="@font/abel"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:padding="15dp" />
-                    -->
             </LinearLayout>
-            <!--
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2.5"
-                            android:gravity="top"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/otraconsulta"
-                                android:layout_width="wrap_content"
-                                android:layout_height="19dp"
-                                android:layout_gravity="top"
-                                android:layout_marginLeft="25dp"
-                                android:text="@string/otra_consulta"
-                                android:textColor="#00182E"
-                                android:textSize="16sp"
-                                android:lineHeight="24sp"/>
-
-                            <androidx.appcompat.widget.AppCompatSpinner
-                                android:id="@+id/spinOtraconsulta_Horario"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@drawable/btn_transparente"
-                                android:text="Elegir otra calle"
-                                android:textColor="@color/black"
-                                android:layout_gravity="center"
-                                android:spinnerMode="dropdown"/>
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:id="@+id/btnLimpiar_Horario"
-                                android:layout_width="170dp"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@drawable/btn_azul"
-                                android:text="@string/Limpiar"
-                                android:textColor="@color/white"
-                                android:layout_gravity="end"/>
-
-
-                        </LinearLayout>
-            !-->
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2.8"
-                android:gravity="top"
-                android:orientation="vertical"
-                android:layout_marginTop="100dp">
-                <!--
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnRegresar_Horario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/btn_nav_forma"
-                    android:text="Regresar"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"/>
-                !-->
-            </LinearLayout>
-
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

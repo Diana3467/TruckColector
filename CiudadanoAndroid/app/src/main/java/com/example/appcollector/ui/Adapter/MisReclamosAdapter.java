@@ -52,7 +52,6 @@ public class MisReclamosAdapter extends RecyclerView.Adapter<MisReclamosAdapter.
         String[] horaparts = hora.split("\\:");
         String hora1 = horaparts[0]; // HH
         String hora2 = horaparts[1]; // MM
-//        String hora3 = horaparts[2]; // SS
         String HoraEnviar = hora1 + ":" + hora2;
 
         String FechaHoraEnviar = FechaEnviar + " (" + HoraEnviar + ")";

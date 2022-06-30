@@ -1,6 +1,5 @@
 package com.example.appcollector.ui.Fragments;
 
-import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,8 +13,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.appcollector.R;
@@ -46,7 +43,6 @@ import static java.lang.Boolean.TRUE;
 
 public class RealizarDenunciaFragment extends Fragment {
 
-//    TextInputLayout txtFecha_Rec, txtHora_Rec, txtNombreCompleto_Rec, txtNumPlaca_Rec, txtDescripcion_Rec;
     TextInputEditText tedFecha_Den, tedNombreCompleto_Den, tedDescripcion_Den;
     AutoCompleteTextView tedModo_Den, tedUbicacionZona_Den, tedCalleUbicacion_Den;
 
@@ -62,7 +58,7 @@ public class RealizarDenunciaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View vista =  inflater.inflate(R.layout.fragment_realizar_denuncia, container, false);
 
         tedFecha_Den = vista.findViewById(R.id.edtFecha_Den);
@@ -96,7 +92,7 @@ public class RealizarDenunciaFragment extends Fragment {
         tedModo_Den.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                edtUbicacionZona_Act.setText("");
+
                 if(tedModo_Den.getText().toString().equals("Público")){
                     llenardatos();
                 }
@@ -121,7 +117,7 @@ public class RealizarDenunciaFragment extends Fragment {
         tedUbicacionZona_Den.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                edtUbicacionZona_Act.setText("");
+
                 txiUbi.setEnabled(false);
                 String cDescZona = tedUbicacionZona_Den.getText().toString();
                 autorellenar(cDescZona);
@@ -207,9 +203,8 @@ public class RealizarDenunciaFragment extends Fragment {
 
         find(oCalleZona);
         validar_sppinerZona = true;
-//                edtUbicacion.setText(autoCompleteTextView.getText().toString());
+
         tedUbicacionZona_Den.setError(null);
-//                Toast.makeText(RegistroUsuarioActivity.this, autoCompleteTextViewZona.getText().toString(), Toast.LENGTH_SHORT).show();
         tedCalleUbicacion_Den.setText("");
         validar_sppiner = false;
     }

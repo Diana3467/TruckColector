@@ -51,9 +51,6 @@ public class LoginActivity extends AppCompatActivity {
                         pass, null, null, null, null);
 
                 AutentificarCiudadano(oCiudadano);
-//                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-//                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                startActivity(i);
             }
         });
         btnNuevoUsuario.setOnClickListener(new View.OnClickListener() {
@@ -136,7 +133,6 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("cDescZona", oDatosCiudadano.getcDescZona());
                     editor.putString("HoraAlarma", "10");
                     editor.commit();
-//                    Toast.makeText(LoginActivity.this, "Guardado en Preferencias", Toast.LENGTH_SHORT).show();
 
                     llamarActivityMain();
 

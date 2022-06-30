@@ -95,20 +95,6 @@
                     android:fontFamily="@font/abel"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtVehiculoAsignado_Rec"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Vehiculo Asignado"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtVehiculoAsignado_Rec"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/abel"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtApellidosCompleto_Rec"
                 android:layout_width="match_parent"

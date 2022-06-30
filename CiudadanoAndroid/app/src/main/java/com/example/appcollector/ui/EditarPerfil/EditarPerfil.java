@@ -60,7 +60,7 @@ public class EditarPerfil extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View vista =  inflater.inflate(R.layout.fragment_editar_perfil, container, false);
 
         edtNombre_Act = vista.findViewById(R.id.edtNombre_EP);
@@ -75,7 +75,6 @@ public class EditarPerfil extends Fragment {
         btnActualizar_usuario = vista.findViewById(R.id.btnActualizar_EP);
         btnCancelar_Act = vista.findViewById(R.id.btnCancelar_EP);
 
-//        edtDNI_Act.setEnabled(false);
         edtDNI_Act.setKeyListener(null);
 
         SharedPreferences preferencias = this.getActivity().getSharedPreferences(ARCHIVO_PREFRENCIAS, Context.MODE_PRIVATE);
@@ -95,7 +94,6 @@ public class EditarPerfil extends Fragment {
             validar_sppiner = TRUE;
         }
 
-//        autorellenar(edtUbicacionZona_Act.getText().toString());
         CalleZona oCalleZona = new CalleZona(null, null, edtUbicacionZona_Act.getText().toString(), null);
         find(oCalleZona);
 
@@ -107,7 +105,6 @@ public class EditarPerfil extends Fragment {
         edtUbicacionZona_Act.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                edtUbicacionZona_Act.setText("");
                 txiUbi.setEnabled(false);
                 String cDescZona = edtUbicacionZona_Act.getText().toString();
                 autorellenar(cDescZona);
@@ -123,7 +120,6 @@ public class EditarPerfil extends Fragment {
                 idCalle = objCallezona.getnCodigoCalle().toString();
 
                 edtUbicacion_Act.setError(null);
-//                Toast.makeText(getActivity(), id, Toast.LENGTH_SHORT).show();
                 validar_sppiner = true;
             }
         });
@@ -177,9 +173,7 @@ public class EditarPerfil extends Fragment {
 
         find(oCalleZona);
         validar_sppinerZona = true;
-//                edtUbicacion.setText(autoCompleteTextView.getText().toString());
         edtUbicacionZona_Act.setError(null);
-//                Toast.makeText(RegistroUsuarioActivity.this, autoCompleteTextViewZona.getText().toString(), Toast.LENGTH_SHORT).show();
         edtUbicacion_Act.setText("");
         validar_sppiner = false;
     }
@@ -229,8 +223,6 @@ public class EditarPerfil extends Fragment {
 
 
     public void find(CalleZona oCalleZona){
-        // ((MainActivity)getActivity()).changeNavHeaderData();
-
         String url = Util.url;
         Retrofit retrofit = new Retrofit.Builder().baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -255,11 +247,6 @@ public class EditarPerfil extends Fragment {
                         String cNombreCalle = post.getcNombreCalle();
                         CalleZona calleZona = new CalleZona(nCodigoCalle, cNombreCalle, null, null);
                         listaCalles.add(calleZona);
-
-//                            Toast.makeText(RegistroUsuarioActivity.this,"El Nombre de la calle es: "+ cNombreCalle, Toast.LENGTH_SHORT).show();
-//                            Log.e("TAG","El Nombre de la calle es: " + cNombreCalle);
-//                            adaptadorSppiner.setDropDownViewResource(R.layout.adaptador_sppiner);
-//                            edtUbicacion.setAdapter(adaptadorSppiner);
 
                         edtUbicacion_Act.setAdapter(adaptadorSppiner);
                     }
@@ -306,7 +293,6 @@ public class EditarPerfil extends Fragment {
                     editor.putString("cNombreCalle", oCiudadano.getcNombreCalle());
                     editor.putString("cDescZona", oCiudadano.getcDescZona());
                     editor.commit();
-//                    Toast.makeText(getActivity(), response.body().toString(), Toast.LENGTH_SHORT).show();
                     Toast.makeText(getActivity(), "Cambios Efectuados Exitosamente!", Toast.LENGTH_SHORT).show();
 
                 }

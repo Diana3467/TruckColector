@@ -16,10 +16,8 @@ import android.widget.Toast;
 
 import com.example.appcollector.R;
 import com.example.appcollector.ui.Adapter.MisDenunciasAdapter;
-import com.example.appcollector.ui.Adapter.MisReclamosAdapter;
 import com.example.appcollector.ui.Interfaces.WebServicesInterface;
 import com.example.appcollector.ui.Modelos.DenunciaCiudadano;
-import com.example.appcollector.ui.Modelos.ReclamoCiudadano;
 import com.example.appcollector.ui.Util.Util;
 
 import java.util.ArrayList;
@@ -43,7 +41,7 @@ public class MisDenuncias extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_mis_denuncias, container, false);
 
         listaDenunciaCiudadano = new ArrayList<>();

@@ -1,16 +1,10 @@
 package com.example.appcollector.ui.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,9 +21,6 @@ import com.example.appcollector.ui.Modelos.CalleZona;
 import com.example.appcollector.ui.Modelos.Ciudadano;
 import com.example.appcollector.ui.Modelos.Token;
 import com.example.appcollector.ui.Util.Util;
-import com.google.android.datatransport.runtime.retries.Retries;
-import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
@@ -42,7 +33,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
 
 
 public class RegistroUsuarioActivity extends AppCompatActivity {
@@ -104,9 +94,7 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
 
                 find(oCalleZona);
                 validar_sppinerZona = true;
-//                edtUbicacion.setText(autoCompleteTextView.getText().toString());
                 edtUbicacionZona.setError(null);
-//                Toast.makeText(RegistroUsuarioActivity.this, autoCompleteTextViewZona.getText().toString(), Toast.LENGTH_SHORT).show();
                 edtUbicacion.setText("");
                 validar_sppiner = false;
 
@@ -133,7 +121,6 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validar()){
-//                    Toast.makeText(RegistroUsuarioActivity.this, "Datos Registrados!!", Toast.LENGTH_SHORT).show();
                     Ciudadano oCiudadano = new Ciudadano(null,
                             edtNombre.getText().toString(),
                             edtApellidoPaterno.getText().toString(),
@@ -196,10 +183,6 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
             edtDNI.setError("El Documento no debe ser vacío");
             retorno = false;
         }
-//        if (celular.isEmpty()){
-//            edtCelular.setError("El Celular no debe ser vacío");
-//            retorno = false;
-//        }
         if (validar_sppinerZona == FALSE){
             edtUbicacionZona.setError("El nombre no debe ser vacío");
             retorno = false;
@@ -219,8 +202,6 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
 
 
     public void find(CalleZona oCalleZona){
-        // ((MainActivity)getActivity()).changeNavHeaderData();
-
         String url = Util.url;
         Retrofit retrofit = new Retrofit.Builder().baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -245,12 +226,6 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
                             String cNombreCalle = post.getcNombreCalle();
                             CalleZona calleZona = new CalleZona(nCodigoCalle, cNombreCalle, null, null);
                             listaCalles.add(calleZona);
-
-//                            Toast.makeText(RegistroUsuarioActivity.this,"El Nombre de la calle es: "+ cNombreCalle, Toast.LENGTH_SHORT).show();
-//                            Log.e("TAG","El Nombre de la calle es: " + cNombreCalle);
-//                            adaptadorSppiner.setDropDownViewResource(R.layout.adaptador_sppiner);
-//                            edtUbicacion.setAdapter(adaptadorSppiner);
-
                             autoCompleteTextView.setAdapter(adaptadorSppiner);
                         }
                         txiUbi.setEnabled(true);

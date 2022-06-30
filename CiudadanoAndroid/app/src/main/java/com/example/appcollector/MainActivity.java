@@ -10,9 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.appcollector.ui.Activity.LoginActivity;
-import com.example.appcollector.ui.Inicio.Inicio;
 import com.example.appcollector.ui.Util.Util;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -41,20 +39,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //PARTE DE ARRIBA ()
         setSupportActionBar(binding.appBarMain.toolbar);
-
-
-        //SIMBOLO DE MENSAJE EN BURBUJA (lo saque de la interfaz)
-//        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
-
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;

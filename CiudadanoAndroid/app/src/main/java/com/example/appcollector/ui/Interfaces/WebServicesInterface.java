@@ -11,13 +11,11 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.GET;
 import retrofit2.http.HTTP;
 import retrofit2.http.Path;
 
 public interface WebServicesInterface {
 
-//    @GET("callezona")
     @HTTP(method = "POST", path = "ciudadano/autentificarciudadano", hasBody = true)
     public Call<Token> AutentificarCiudadano(@Body Ciudadano oCiudadano);
 

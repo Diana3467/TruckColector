@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appcollector.R;
 import com.example.appcollector.ui.Modelos.DenunciaCiudadano;
-import com.example.appcollector.ui.Modelos.ReclamoCiudadano;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -53,7 +52,6 @@ public class MisDenunciasAdapter extends RecyclerView.Adapter<MisDenunciasAdapte
         String[] horaparts = hora.split("\\:");
         String hora1 = horaparts[0]; // HH
         String hora2 = horaparts[1]; // MM
-//        String hora3 = horaparts[2]; // SS
         String HoraEnviar = hora1 + ":" + hora2;
 
         String FechaHoraEnviar = FechaEnviar + " (" + HoraEnviar + ")";

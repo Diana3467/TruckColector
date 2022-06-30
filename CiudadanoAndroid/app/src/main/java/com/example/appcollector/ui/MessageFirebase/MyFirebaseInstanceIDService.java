@@ -1,6 +1,5 @@
 package com.example.appcollector.ui.MessageFirebase;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -13,7 +12,6 @@ import androidx.core.app.NotificationCompat;
 
 import com.example.appcollector.MainActivity;
 import com.example.appcollector.R;
-import com.example.appcollector.ui.Inicio.Inicio;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -38,15 +36,9 @@ public class MyFirebaseInstanceIDService extends FirebaseMessagingService implem
         super.onMessageReceived(remoteMessage);
 
         if(remoteMessage.getNotification() != null){
-//            Log.e("TAG","El titulo es: " + remoteMessage.getNotification().getTitle());
-//            Log.e("TAG","El cuerpo es: " + remoteMessage.getNotification().getBody());
-
             String titulo = remoteMessage.getNotification().getTitle();
             String cuerpo = remoteMessage.getNotification().getBody();
-
             mayorqueoreo(titulo, cuerpo);
-
-
         }
 
     }
